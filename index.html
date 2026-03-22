@@ -64,7 +64,7 @@
         }
 
         .hero-description {
-            color: #245953be;
+            color: #111111;
             font-size: 1em;
             line-height: 1.6;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
@@ -90,7 +90,7 @@
             margin: 40px 0;
         }
         #skills article {
-            flex: 1 1 calc(25% - 20px);
+            flex: 1 1 calc(25% - 15px);
             background: #ffffff;
             border-radius: 8px;
             padding: 30px 20px;
@@ -107,15 +107,8 @@
         #skills p { color: #555; font-size: 0.95em; }
 
         /* --- Responsive --- */
-        @media screen and (max-width: 1024px) { #skills article { flex: 1 1 calc(50% - 20px); } }
-        @media screen and (max-width: 768px) {
-            .hero-content { flex-direction: column; text-align: center; gap: 20px; }
-            .portrait img { max-width: 150px; }
-        }
-        @media screen and (max-width: 480px) {
-            .intro-text h1 { font-size: 1.8em; }
-            .intro-text h2 { font-size: 1em; }
-        }
+        @media screen and (max-width: 1024px) { #skills article { flex: 1 1 calc(50% - 10px); } }
+        @media screen and (max-width: 768px)  { #skills article { flex: 1 1 100%; } }
     </style>
 </head>
 
