@@ -10,6 +10,7 @@
     <title>Jekaterina Truskina Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
         /* --- General Reset --- */
@@ -169,6 +170,29 @@
             #hero {
                 padding: 40px 15px; /* less aggressive spacing */
             }
+        #footer {
+            background: #111;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .footer-icons a {
+            color: #ccc;
+            font-size: 1.8em;
+            margin: 0 18px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-icons a:hover {
+            color: #E06666;
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        /* subtle divider feel */
+        .footer-bottom {
+            margin-top: 20px;
+            font-size: 0.85em;
+            color: #777;
     </style>
 </head>
 
@@ -222,36 +246,24 @@
         
 
         <footer id="footer">
-            <div class="footer-container">
+            <div class="footer-icons">
 
-                <div class="footer-left">
-                    <h3>Jekaterina Truskina</h3>
-                    <p>Applied AI & Computer Vision Engineer<br>
-                    Agriculture · Life Sciences · Environment</p>
-                </div>
+                <a href="https://www.linkedin.com/in/jekaterina-truskina-589850248/" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
 
-                <div class="footer-center">
-                    <a href="index.html">Home</a>
-                    <a href="#">Projects</a>
-                    <a href="#">Contact</a>
-                </div>
+                <a href="https://github.com/JekaterinaTr" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
 
-                <div class="footer-right">
-                    <a href="https://www.linkedin.com/in/jekaterina-truskina-589850248/" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/JekaterinaTr" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:katja.t@gmail.com">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
+                <a href="mailto:katja.t@gmail.com" aria-label="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
 
             </div>
 
             <div class="footer-bottom">
-                © 2026 Jekaterina Truskina · Built with precision & AI
+                © 2026 Jekaterina Truskina
             </div>
         </footer>
     <!-- Scripts -->
