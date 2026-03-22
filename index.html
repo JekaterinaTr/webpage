@@ -24,6 +24,21 @@
                     text-align: center;  /* center text */
                     color: #fff;         /* adjust for readability on background */
                 }
+                #hero::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background-color: rgba(0, 0, 0, 0.4); /* adjust alpha 0.0–1.0 */
+                    z-index: 0; /* behind content */
+                }
+
+                #hero > * {
+                    position: relative; /* ensure text is above overlay */
+                    z-index: 1;
+                }
                 .flex-container { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
                 .portrait img { border-radius: 50%; max-width: 200px; }
                 .intro-text { max-width: 700px; }
