@@ -1,0 +1,105 @@
+<article onclick="location.href='#'">
+    <h3>API Development for Client</h3>
+    <p>Interactive Interface with Dashboards and Live Updates</p>
+
+    <section>
+        <h4>Interactive Client API & Data Access</h4>
+        <p>
+            Developed a centralized API to allow clients to access AI predictions, analytics, and visualization outputs.
+            Clients can extract data in multiple formats:
+        </p>
+        <ul>
+            <li>CSV for tabular analysis</li>
+            <li>Graphs & charts for visual insights</li>
+            <li>Annotated images for object detection predictions</li>
+        </ul>
+        <p>
+            Designed for flexibility: the API can be accessed via Python scripts, desktop apps, or modern web platforms.
+            Currently deployed as a Python API; future enhancements include a web-based interactive dashboard.
+        </p>
+    </section>
+
+    <section>
+        <h4>Technologies & Tools</h4>
+        <ul>
+            <li>Python | FastAPI | REST API</li>
+            <li>MongoDB / PostgreSQL for structured storage</li>
+            <li>Pandas, Matplotlib, Plotly for analytics and visualization</li>
+            <li>Streamlit / Dash for interactive dashboards</li>
+            <li>Tkinter for optional desktop GUI</li>
+            <li>Docker for deployment & reproducibility</li>
+        </ul>
+    </section>
+
+    <section>
+        <h4>Architecture & Workflow</h4>
+        <pre>
+┌───────────────────────────────┐
+│        CLIENT API LAYER       │
+│ Central API endpoint serving: │
+│ • CSV, Graphs, Annotated Images │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│     DATA & MODEL INTERFACE    │
+│ • Query MongoDB / SQL         │
+│ • Precomputed statistics      │
+│ • On-demand model inference   │
+└───────────────┬───────────────┘
+                │
+        ┌───────┴────────┐
+        ▼                ▼
+┌───────────────┐   ┌─────────────────┐
+│ CSV Output    │   │ Graphs / Charts │
+└───────────────┘   └─────────┬───────┘
+                          │
+                          ▼
+                 ┌─────────────────┐
+                 │ Annotated Images│
+                 │ Prediction Data │
+                 └─────────────────┘
+        </pre>
+    </section>
+
+    <section>
+        <h4>Mermaid Diagram</h4>
+        <pre class="mermaid">
+flowchart LR
+    A[Client Request] --> B[API Endpoint]
+    B --> C[Data & Model Interface]
+    C --> D[On-demand Inference]
+    C --> E[Query Historical Data]
+    D --> F[Annotated Images]
+    D --> G[Prediction CSV]
+    E --> H[Graph / Chart Outputs]
+    F --> I[Client Download]
+    G --> I
+    H --> I
+        </pre>
+    </section>
+
+    <section>
+        <h4>Future Web Frontend Approaches</h4>
+        <ul>
+            <li><strong>Streamlit:</strong> Fast integration with Python API, interactive graphs, and widgets</li>
+            <li><strong>Dash / Plotly Dash:</strong> Multi-page, reactive dashboards with callbacks for live updates</li>
+            <li><strong>React / Next.js + FastAPI:</strong> Fully modern web portal with responsive design and rich interactivity</li>
+            <li><strong>Gradio:</strong> Quick demos for model predictions on images or videos</li>
+            <li><strong>Desktop App:</strong> PyQt or Tkinter interface for offline API access</li>
+        </ul>
+        <p>
+            This project demonstrates end-to-end client accessibility, from automated AI predictions to interactive data exploration.
+        </p>
+    </section>
+
+    <section>
+        <h4>Business & Client Impact</h4>
+        <ul>
+            <li>Clients can retrieve structured insights without coding knowledge</li>
+            <li>Supports multiple output formats: CSV, graphs, images</li>
+            <li>Scalable solution for future dashboards or mobile apps</li>
+            <li>Strong foundation for integrating real-time AI analytics into client workflows</li>
+        </ul>
+    </section>
+</article>
