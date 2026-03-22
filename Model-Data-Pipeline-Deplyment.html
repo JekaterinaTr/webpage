@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IA Integration Pipeline & Automation | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Projects container */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        .project {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .project h2 {
+            color: #ff7e5f;
+            margin-top: 0;
+        }
+        .project p {
+            line-height: 1.6;
+        }
+
+        .section-title {
+            margin-top: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #feb47b;
+        }
+
+        .metrics-table, .metrics-table th, .metrics-table td {
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        .metrics-table th {
+            background-color: #f0f0f0;
+        }
+        .metrics-table td {
+            text-align: center;
+        }
+
+        .cta {
+            margin-top: 25px;
+            text-align: center;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #ff7e5f;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta a:hover {
+            background: #e76642;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <h3>IA Integration Pipeline & Automation</h3>
+        <p>
+            Edge inference, production pipelines, automated workflows, server deployment, 
+            and cloud-based data integration for scalable AI applications.
+        </p>
+    </section>
+
+    <!-- Projects container -->
+    <div class="container">
+
+        <!-- Featured project: Cloud Deployment -->
+        <div class="project">
+            <h2>Cloud Deployment of YOLO11 for Real-Time Pollen Detection</h2>
+            <p>
+                This project demonstrates fully automated deployment of the YOLO11 model on a cloud server. 
+                It integrates with MongoDB for data storage, enabling real-time inference pipelines and dashboards.
+            </p>
+
+            <div class="section-title">Project Overview</div>
+            <p>
+                Key goals were to provide:
+                <ul>
+                    <li>Server-hosted AI inference accessible via REST API</li>
+                    <li>Automated data storage and retrieval in MongoDB</li>
+                    <li>Scheduled workflows for continuous data processing</li>
+                    <li>Visualization and reporting dashboards for end-users</li>
+                </ul>
+            </p>
+
+            <div class="section-title">Deployment Architecture</div>
+            <p>
+                <strong>YOLO11 Model:</strong> Trained for pollen detection on dense microscopy images.<br>
+                <strong>Server Stack:</strong> Ubuntu server + Python 3.11 + PyTorch + Flask API + Gunicorn + Nginx<br>
+                <strong>Database:</strong> MongoDB for storing detection results, timestamps, and metadata<br>
+                <strong>Automation:</strong> Cron jobs or Celery pipelines for scheduled inference
+            </p>
+
+            <div class="section-title">Workflow</div>
+            <ol>
+                <li>Upload images via API / batch directory.</li>
+                <li>YOLO11 model inference on server GPU or CPU fallback.</li>
+                <li>Store results (bounding boxes, class, confidence, timestamps) in MongoDB.</li>
+                <li>Trigger downstream processing for analytics dashboards or CSV exports.</li>
+                <li>Optional edge synchronization: model can run offline if needed.</li>
+            </ol>
+
+            <div class="section-title">Performance Metrics</div>
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>mAP</th>
+                        <th>GPU FPS</th>
+                        <th>CPU FPS</th>
+                        <th>DB Storage Latency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>YOLO11s</td><td>0.923</td><td>64 FPS</td><td>10 FPS</td><td>5–8 ms</td></tr>
+                    <tr><td>YOLO11n</td><td>0.915</td><td>91 FPS</td><td>30 FPS</td><td>5 ms</td></tr>
+                </tbody>
+            </table>
+
+            <div class="section-title">Automation & Cloud Integration</div>
+            <ul>
+                <li>Flask REST API exposes endpoints for image upload and inference requests.</li>
+                <li>Celery worker manages scheduled batch inference and retries for large datasets.</li>
+                <li>MongoDB stores results with indexing for fast retrieval and analytics.</li>
+                <li>Optional dashboard integration with Plotly / Dash or React for live visualization.</li>
+            </ul>
+
+            <div class="section-title">Business & Technical Impact</div>
+            <ul>
+                <li>Enables continuous pollen monitoring with minimal human intervention.</li>
+                <li>Scalable to multiple cloud nodes or hybrid edge-cloud setups.</li>
+                <li>Demonstrates end-to-end AI deployment: model → server → database → dashboard.</li>
+                <li>Foundation for integrating additional models or automated triggers for alerts.</li>
+            </ul>
+
+            <div class="cta">
+                <a href="https://github.com/YOUR_GITHUB_LINK" target="_blank">View Deployment Pipeline</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
