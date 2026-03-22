@@ -7,11 +7,9 @@
     <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
       mermaid.initialize({
-          startOnLoad:true,
-          securityLevel: "loose", // allows links/tooltips
-          flowchart: {
-              curve: "basis"
-          }
+          startOnLoad: true,
+          securityLevel: "loose",
+          flowchart: { curve: "basis" }
       });
     </script>
     <style>
@@ -69,7 +67,7 @@
 </head>
 <body>
 
-    <!-- Hero Section -->
+    <!-- Hero Section  -->
     <section class="hero">
         <h3>My Approach</h3>
         <p>
@@ -95,18 +93,11 @@
             <div class="section-title">Interactive Visual Workflow</div>
             <div class="mermaid">
 flowchart LR
-    A[Data Capture<\n>(Images & Sensors)]:::step1 --> B[Data Preprocessing<\n>(Cleaning & Annotation)]:::step2
-    B --> C[Model Development<\n/>(YOLO12/26, LSTM, Transformers)]:::step3
-    C --> D[Model Optimization<\n>(ONNX, TensorRT, OpenVINO, FP16/INT8)]:::step4
-    D --> E[Deployment & Automation<\n>(API, Streamlit, Dash, Edge Devices)]:::step5
-    E --> F[End-User Insights<\n>(CSV, Charts, Annotated Images)]:::step6
-
-    click A "https://example.com/data-capture" "Data Sources & Sensors"
-    click B "https://example.com/preprocessing" "Preprocessing Techniques"
-    click C "https://example.com/models" "Model Types & Training"
-    click D "https://example.com/optimization" "Optimization Pipelines"
-    click E "https://example.com/deployment" "Deployment & Edge/Cloud"
-    click F "https://example.com/insights" "Visualization & Reports"
+    A["Data Capture\n(Images & Sensors)"]:::step1 --> B["Data Preprocessing\n(Cleaning & Annotation)"]:::step2
+    B --> C["Model Development\n(YOLO12/26, LSTM, Transformers)"]:::step3
+    C --> D["Model Optimization\n(ONNX, TensorRT, OpenVINO, FP16/INT8)"]:::step4
+    D --> E["Deployment & Automation\n(API, Streamlit, Dash, Edge Devices)"]:::step5
+    E --> F["End-User Insights\n(CSV, Charts, Annotated Images)"]:::step6
 
     classDef step1 fill:#a8edea,stroke:#43cea2,stroke-width:2px;
     classDef step2 fill:#fdd6bd,stroke:#f2994a,stroke-width:2px;
