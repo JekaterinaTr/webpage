@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Adaptation for Cloud / Edge | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .hero h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Projects container */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        .project {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .project h2 {
+            color: #6a11cb;
+            margin-top: 0;
+        }
+        .project p {
+            line-height: 1.6;
+        }
+
+        .section-title {
+            margin-top: 25px;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2575fc;
+        }
+
+        .metrics-table, .metrics-table th, .metrics-table td {
+            border: 1px solid #ddd;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        .metrics-table th {
+            background-color: #f0f0f0;
+        }
+        .metrics-table td {
+            text-align: center;
+        }
+
+        .results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .result-box {
+            background: #f8f8f8;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .cta {
+            margin-top: 25px;
+            text-align: center;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #6a11cb;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta a:hover {
+            background: #4b08a7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <h3>Model Adaptation for Cloud / Edge</h3>
+        <p>
+            Performance tuning, INT8/FP16 quantization, ONNX, TensorRT, and OpenVINO pipelines for 
+            real-time deployment on low-cost hardware and GPU systems. Optimizing AI models for speed, 
+            efficiency, and real-world offline deployment.
+        </p>
+    </section>
+
+    <!-- Projects container -->
+    <div class="container">
+
+        <!-- Featured project: Edge Deployment -->
+        <div class="project">
+            <h2>Edge Deployment of Dense Agricultural Detection</h2>
+            <p>
+                Using the wheat head dataset to demonstrate AI models fully optimized for edge devices. 
+                Focused on model selection, quantization, hardware-aware deployment, and real-world inference.
+            </p>
+
+            <div class="section-title">Workflow</div>
+            <p>
+                Dataset → Training (PyTorch) → Export (ONNX) → Optimization (TensorRT / OpenVINO / INT8) → 
+                Edge Device → Live Inference → Output (Counts / API / Dashboard)
+            </p>
+
+            <div class="section-title">Step 1 — Baseline Models</div>
+            <ul>
+                <li>YOLO12s: best balance accuracy ↔ speed</li>
+                <li>YOLO12n: ultra-lightweight for edge devices</li>
+                <li>YOLO26n / YOLO26s: latest edge-ready YOLO models</li>
+                <li>SSD + MobileNetV4: alternative lightweight backbone</li>
+            </ul>
+
+            <div class="section-title">Step 2 — Edge Optimization Pipeline</div>
+            <p>
+                PyTorch → ONNX → TensorRT (Jetson) / OpenVINO (Intel CPU) → FP16 → INT8  
+                Metrics tracked at each stage: Model size, latency, FPS, mAP drop, MAE change.
+            </p>
+
+            <div class="section-title">Device Strategy</div>
+            <ul>
+                <li>🔵 Raspberry Pi: YOLO12n → ONNX → OpenVINO (INT8), 5–15 FPS</li>
+                <li>🟢 NVIDIA Jetson: YOLO12s → ONNX → TensorRT FP16, optional INT8, 20–60 FPS</li>
+                <li>🟣 Intel CPU Laptop: YOLO12s → OpenVINO INT8, 2–3× speedup vs raw PyTorch</li>
+            </ul>
+
+            <div class="section-title">Performance & Accuracy</div>
+            <table class="metrics-table">
+                <thead>
+                    <tr>
+                        <th>Model</th>
+                        <th>mAP</th>
+                        <th>PyTorch CPU FPS</th>
+                        <th>ONNX CPU FPS</th>
+                        <th>ONNX CUDA FP32</th>
+                        <th>TensorRT FP16</th>
+                        <th>TensorRT INT8</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>YOLO12s</td><td>0.935</td><td>6.1</td><td>10.14</td><td>51.88</td><td>—</td><td>—</td></tr>
+                    <tr><td>YOLO12n</td><td>0.928</td><td>12.1</td><td>32.62</td><td>80</td><td>—</td><td>—</td></tr>
+                    <tr><td>YOLO11s</td><td>0.923</td><td>7.14</td><td>10.68</td><td>64.36</td><td>—</td><td>—</td></tr>
+                    <tr><td>YOLO11n</td><td>0.915</td><td>13.0</td><td>30.39</td><td>91.07</td><td>—</td><td>—</td></tr>
+                    <tr><td>YOLO26n</td><td>0.912</td><td>17.5</td><td>35.56</td><td>102.16</td><td>—</td><td>—</td></tr>
+                    <tr><td>YOLO26s</td><td>0.921</td><td>7.7</td><td>12.61</td><td>62.57</td><td>—</td><td>—</td></tr>
+                </tbody>
+            </table>
+
+            <div class="section-title">Key Insights</div>
+            <ul>
+                <li>Yolo26n achieves 102 FPS on GPU with only 2.3% accuracy drop → ideal for real-time monitoring.</li>
+                <li>Nano models provide 3× faster CPU inference → feasible for Raspberry Pi / CPU-only systems.</li>
+                <li>ONNX optimization delivers 2–3× speed improvement without sacrificing accuracy.</li>
+                <li>Demonstrates real-world deployment on edge devices without cloud dependency.</li>
+            </ul>
+
+            <div class="section-title">Technical Stack</div>
+            <p>PyTorch, ONNX Runtime, TensorRT, OpenVINO, CUDA, Flutter/React Native for frontend demo</p>
+
+            <div class="cta">
+                <a href="https://github.com/YOUR_GITHUB_LINK" target="_blank">View Deployment Pipeline</a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
