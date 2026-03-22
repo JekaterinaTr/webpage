@@ -15,20 +15,45 @@
                 /* Hero section layout */
                 #hero {
                     background-image: url('images/Background.png'); 
-                    background-size: cover;
+                    background-size: 100% 100%;
                     background-position: center;
+                    
                     padding: 80px 20px;
                     display: flex;
                     flex-direction: column;
                     align-items: center; /* horizontal centering */
                     text-align: center;  /* center text */
                     color: #fff;         /* adjust for readability on background */
+                    position: relative;
                 }
-                .flex-container { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
-                .portrait img { border-radius: 50%; max-width: 200px; }
+                .flex-container { display: flex; flex-wrap: nowrap; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; }
+                .portrait img { border-radius: 50%; max-width: 200px; border: 4px solid rgba(255,255,255,0.6); }
                 .intro-text { max-width: 700px; }
                 .intro-text h1 { margin-bottom: 10px; }
                 .intro-text h2 { margin-bottom: 20px; color: #555; font-weight: normal; }
+                #hero-menu {
+                    flex-shrink: 0;
+                }
+                #hero-menu ul {
+                    list-style: none;
+                    display: flex;
+                    gap: 20px;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                #hero-menu ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-weight: bold;
+                    padding: 8px 12px;
+                    border-radius: 6px;
+                    transition: background 0.3s;
+                }
+
+                #hero-menu ul li a:hover {
+                    background: rgba(255, 255, 255, 0.2);
+                }
                 
                 /* Skills tiles */
                 #skills { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; margin: 40px 0; }
@@ -63,19 +88,7 @@
 				</div>
 			</header>
 
-			<!-- Menu -->
-			<nav id="menu">
-				<h2>Menu</h2>
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="avocado.html">Project: Avocado sales in SQL and PowerBI</a></li>
-					<li><a href="air.html">Project: Air quality in Madrid with Python</a></li>
-					<li><a href="Statistics in R.html">Project: Statistics in R</a></li>
-					<li><a href="birds.html">Project: Bird observations in SQL and Tableau</a></li>
-					<li><a href="malaria.html">Project: Malaria infections in R</a></li>
-					<li><a href="travel.html">Project: Travel insurance in Excel</a></li>				
-				</ul>
-			</nav>
+			
 
 			<!-- Main -->
 			<div id="main">
@@ -83,6 +96,16 @@
 
 					<!-- Hero / Intro Section -->
 					<section id="hero">
+                        <div class="hero-menu">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="avocado.html">AI Model Development & Optimization</a></li>
+                                <li><a href="air.html">Model Adaptation for Cloud / Edge</a></li>
+                                <li><a href="Statistics in R.html">Model Deployment & Automation</a></li>
+                                <li><a href="Statistics in R.html">API Development for Client</a></li>
+                                
+                            </ul>
+                        </div>
 						<div class="flex-container">
 							<div class="portrait">
 								<img src="images/Picture1.jpg" alt="Jekaterina Truskina" />
