@@ -8,10 +8,36 @@
 	<head>
 		<title>Jekaterina Truskina Portfolio</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
+        <style>
+                /* Hero section layout */
+                #hero { background-color: #f5f5f5; padding: 60px 0; }
+                .flex-container { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
+                .portrait img { border-radius: 50%; max-width: 200px; }
+                .intro-text { max-width: 700px; }
+                .intro-text h1 { margin-bottom: 10px; }
+                .intro-text h2 { margin-bottom: 20px; color: #555; font-weight: normal; }
+                
+                /* Skills tiles */
+                #skills { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; margin: 40px 0; }
+                #skills article { flex: 1 1 calc(25% - 20px); background: #ffffff; border-radius: 8px; padding: 30px 20px; text-align: center; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 3px 6px rgba(0,0,0,0.1);}
+                #skills article:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15);}
+                #skills h3 { margin-bottom: 10px; font-size: 1.1em; color: #222; }
+                #skills p { color: #555; font-size: 0.95em; }
+                
+                /* Responsive adjustments */
+                @media screen and (max-width: 1024px) {
+                    #skills article { flex: 1 1 calc(50% - 20px); }
+                }
+                @media screen and (max-width: 600px) {
+                    .flex-container { flex-direction: column; text-align: center; }
+                    .intro-text { max-width: 100%; }
+                    #skills article { flex: 1 1 100%; }
+                }
+            </style>
+    </head>
 	<body class="is-preload">
 		<!-- Wrapper -->
 		<div id="wrapper">
@@ -45,14 +71,40 @@
 			<div id="main">
 				<div class="inner">
 
-					<!-- Hero Section -->
-					<header>
-						<h1>Jekaterina Truskina</h1>
-						<h2>Applied AI & Computer Vision Engineer for Biological & Environmental Systems</h2>
-						<p>PhD in Plant Biology | Computer Vision | Edge AI | Production Deployment</p>
-						<p>Designing and deploying end-to-end AI systems from model training to server integration.</p>
-						<p>I design, benchmark, and deploy end-to-end AI systems for biological, environmental, and scientific applications — from model architecture to server integration.</p>
-					</header>
+					<!-- Hero / Intro Section -->
+					<section id="hero">
+						<div class="flex-container">
+							<div class="portrait">
+								<img src="images/portrait.jpg" alt="Jekaterina Truskina" />
+							</div>
+							<div class="intro-text">
+								<h1>Jekaterina Truskina</h1>
+								<h2>Applied AI & Computer Vision Engineer<br/>for Biological & Environmental Systems</h2>
+								<p>PhD in Plant Biology | Computer Vision | Edge AI | Production Deployment</p>
+								<p>Designing and deploying end-to-end AI systems from model training to server integration. I combine scientific rigor with engineering pragmatism to deliver robust, deployable AI solutions.</p>
+							</div>
+						</div>
+					</section>
+
+                    <!-- Skills Tiles Section -->
+					<section id="skills">
+						<article onclick="location.href='#'">
+							<h3>AI Model Development & Optimization</h3>
+							<p>Dense object detection, forecasting, anomaly detection for agriculture, life sciences, and environmental applications.</p>
+						</article>
+						<article onclick="location.href='#'">
+							<h3>Model Adaptation for Cloud / Edge</h3>
+							<p>Performance tuning, INT8/FP16 quantization, ONNX, TensorRT, and OpenVINO pipelines.</p>
+						</article>
+						<article onclick="location.href='#'">
+							<h3>Model Deployment & Automation</h3>
+							<p>Edge inference, production pipelines, automated workflows, server deployment.</p>
+						</article>
+						<article onclick="location.href='#'">
+							<h3>API Development for Client</h3>
+							<p>REST API design, MongoDB integration, structured outputs (CSV, graphs, labeled images).</p>
+						</article>
+					</section>
 
 					<!-- Expertise Section -->
 					<section>
