@@ -65,7 +65,7 @@
 
         .hero-description {
             color: #2a1313;
-            font-size: 1.1em;
+            font-size: 1.3em;
             line-height: 1.6;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
             font-weight: bold;
@@ -108,7 +108,38 @@
 
         /* --- Responsive --- */
         @media screen and (max-width: 1024px) { #skills article { flex: 1 1 48%; } }
-        @media screen and (max-width: 768px)  { #skills article { flex: 1 1 100%; } }
+        @media screen and (max-width: 768px)  {
+            
+        #skills article { flex: 1 1 100%; } }
+
+    
+
+        .hero-content {
+            flex-direction: column; /* 🔥 STACK instead of side-by-side */
+            text-align: center;
+            gap: 20px;
+        }
+
+        .portrait img {
+            max-width: 140px; /* smaller image on mobile */
+        }
+
+        .hero-name {
+            font-size: 2em;
+        }
+
+        .hero-title {
+            font-size: 1.4em;
+        }
+
+        .hero-description {
+            font-size: 1em;
+            padding: 0 10px; /* prevent edge overflow */
+        }
+
+        #hero {
+            padding: 40px 15px; /* less aggressive spacing */
+        }
     </style>
 </head>
 
