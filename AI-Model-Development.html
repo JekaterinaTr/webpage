@@ -21,9 +21,26 @@
             background-position:  center; 
             background-repeat: no-repeat;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 80px 20px;
             
         }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+
+            /* ✨ Card style */
+            background: rgba(255, 255, 255, 0.85); /* semi-transparent */
+            backdrop-filter: blur(8px); /* glass effect (modern look) */
+            
+            padding: 30px 40px;
+            border-radius: 20px;
+            
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
 
         .hero h3 {
             font-size: 2em;
@@ -101,11 +118,14 @@
 
     <!-- Hero section -->
     <section class="hero">
-        <h3>AI Model Development & Optimization</h3>
-        <p>
-            Dense object detection, forecasting, and anomaly detection across agriculture, life sciences, 
-            and environmental applications. I design, train, and optimize robust AI systems that work in real-world conditions.
-        </p>
+        <div class="hero-content">
+
+            <h3>AI Model Development & Optimization</h3>
+            <p>
+                Dense object detection, forecasting, and anomaly detection across agriculture, life sciences, 
+                and environmental applications. I design, train, and optimize robust AI systems that work in real-world conditions.
+            </p>
+        </div>
     </section>
 
     <!-- Projects container -->
