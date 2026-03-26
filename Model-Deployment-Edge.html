@@ -172,20 +172,43 @@
         .arrow:hover {
             transform: scale(1.2); /* subtle zoom effect on hover */
         }
-        .results {
+
+        .key-insights {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
-        .result-box {
-            background: #f8f8f8;
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+
+        .insight-card {
+            background: #e9eaeb; /* light grey-blue */
+            border-radius: 12px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
+        .insight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .insight-icon {
+            font-size: 1.8em;
+            color: #1c50a8; /* deep blue icon */
+            flex-shrink: 0;
+        }
+
+        .insight-text {
+            font-size: 0.95em;
+            line-height: 1.4;
+            color: #222;
+        }
+
+       
         .cta {
             margin-top: 25px;
             text-align: center;
@@ -282,12 +305,24 @@
             </table>
 
             <div class="section-title">Key Insights</div>
-            <ul>
-                <li>Yolo26n achieves 102 FPS on GPU with only 2.3% accuracy drop → ideal for real-time monitoring.</li>
-                <li>Nano models provide 3× faster CPU inference → feasible for Raspberry Pi / CPU-only systems.</li>
-                <li>ONNX optimization delivers 2–3× speed improvement without sacrificing accuracy.</li>
-                <li>Demonstrates real-world deployment on edge devices without cloud dependency.</li>
-            </ul>
+            <div class="key-insights">
+                <div class="insight-card">
+                    <div class="insight-icon">⚡</div>
+                    <div class="insight-text">Yolo26n achieves 102 FPS on GPU with only 2.3% accuracy drop → ideal for real-time monitoring.</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">🖥️</div>
+                    <div class="insight-text">Nano models provide 3× faster CPU inference → feasible for Raspberry Pi / CPU-only systems.</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">🚀</div>
+                    <div class="insight-text">ONNX optimization delivers 2–3× speed improvement without sacrificing accuracy.</div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">🌐</div>
+                    <div class="insight-text">Demonstrates real-world deployment on edge devices without cloud dependency.</div>
+                </div>
+            </div>
 
             
 
