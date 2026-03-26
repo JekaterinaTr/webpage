@@ -146,13 +146,17 @@
         .table-wrapper {
             width: 100%;
             overflow-x: auto; /* horizontal scroll if table is too wide */
+            webkit-overflow-scrolling: touch; 
             margin-top: 20px;
         }
 
         .table-wrapper table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 800px; /* optional, keeps table readable */
+            min-width: 900px; /* optional, keeps table readable */
+        }
+        table th, table td {
+            white-space: nowrap; /* prevent wrapping that breaks columns */
         }
                 /* Table styling */
         table { border-collapse: collapse; width: 100%; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 25px; }
@@ -219,123 +223,123 @@
                     <caption>Wheat Head Detection Benchmark – Model Comparison</caption>
                     <thead>
                         <tr>
-                        <th>Model</th>
-                        <th>Params (M)</th>
-                        <th>mAP@0.5</th>
-                        <th>mAP@[0.5:0.95]</th>
-                        <th>MAE</th>
-                        <th>RMSE</th>
-                        <th>Bias</th>
-                        <th>FPS (GPU)</th>
-                        <th>Model Size (MB)</th>
-                        <th>Peak VRAM (GB)</th>
-                        <th>Notes / Run</th>
+                            <th>Model</th>
+                            <th>Params (M)</th>
+                            <th>mAP@0.5</th>
+                            <th>mAP@[0.5:0.95]</th>
+                            <th>MAE</th>
+                            <th>RMSE</th>
+                            <th>Bias</th>
+                            <th>FPS (GPU)</th>
+                            <th>Model Size (MB)</th>
+                            <th>Peak VRAM (GB)</th>
+                            <th>Notes / Run</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                        <td>YOLO11-N</td>
-                        <td>8.5</td>
-                        <td class="mid">0.915</td>
-                        <td class="mid">0.514</td>
-                        <td class="mid">11.978</td>
-                        <td class="mid">15.789</td>
-                        <td class="mid">-9.556</td>
-                        <td class="best">50.3</td>
-                        <td class="best">5.22</td>
-                        <td class="best">1.1</td>
-                        <td>Train38 – fastest, edge-friendly</td>
+                            <td>YOLO11-N</td>
+                            <td>8.5</td>
+                            <td class="mid">0.915</td>
+                            <td class="mid">0.514</td>
+                            <td class="mid">11.978</td>
+                            <td class="mid">15.789</td>
+                            <td class="mid">-9.556</td>
+                            <td class="best">50.3</td>
+                            <td class="best">5.22</td>
+                            <td class="best">1.1</td>
+                            <td>fastest, edge-friendly</td>
                         </tr>
                         <tr>
-                        <td>YOLO11-S</td>
-                        <td>22.3</td>
-                        <td class="mid">0.923</td>
-                        <td class="mid">0.521</td>
-                        <td class="mid">12.020</td>
-                        <td class="mid">15.774</td>
-                        <td class="mid">-10.646</td>
-                        <td class="mid">28.5</td>
-                        <td class="mid">18.29</td>
-                        <td class="mid">1.5</td>
-                        <td>Train39 – best detection in YOLO11</td>
+                            <td>YOLO11-S</td>
+                            <td>22.3</td>
+                            <td class="mid">0.923</td>
+                            <td class="mid">0.521</td>
+                            <td class="mid">12.020</td>
+                            <td class="mid">15.774</td>
+                            <td class="mid">-10.646</td>
+                            <td class="mid">28.5</td>
+                            <td class="mid">18.29</td>
+                            <td class="mid">1.5</td>
+                            <td>best detection in YOLO11</td>
                         </tr>
                         <tr>
-                        <td>YOLO11-L</td>
-                        <td>46.6</td>
-                        <td class="mid">0.921</td>
-                        <td class="mid">0.516</td>
-                        <td class="mid">12.000</td>
-                        <td class="mid">15.922</td>
-                        <td class="mid">-10.494</td>
-                        <td class="mid">22.32</td>
-                        <td class="mid">48.82</td>
-                        <td class="mid">3.1</td>
-                        <td>Train37 – largest YOLO11</td>
+                            <td>YOLO11-L</td>
+                            <td>46.6</td>
+                            <td class="mid">0.921</td>
+                            <td class="mid">0.516</td>
+                            <td class="mid">12.000</td>
+                            <td class="mid">15.922</td>
+                            <td class="mid">-10.494</td>
+                            <td class="mid">22.32</td>
+                            <td class="mid">48.82</td>
+                            <td class="mid">3.1</td>
+                            <td>largest YOLO11</td>
                         </tr>
                         <tr>
-                        <td>YOLO12-N</td>
-                        <td>9.0</td>
-                        <td class="mid">0.928</td>
-                        <td class="mid">0.520</td>
-                        <td class="mid">11.873</td>
-                        <td class="mid">15.684</td>
-                        <td class="mid">-11.418</td>
-                        <td class="mid">32.47</td>
-                        <td class="best">5.27</td>
-                        <td class="best">1.4</td>
-                        <td>Train2 – lightweight YOLO12</td>
+                            <td>YOLO12-N</td>
+                            <td>9.0</td>
+                            <td class="mid">0.928</td>
+                            <td class="mid">0.520</td>
+                            <td class="mid">11.873</td>
+                            <td class="mid">15.684</td>
+                            <td class="mid">-11.418</td>
+                            <td class="mid">32.47</td>
+                            <td class="best">5.27</td>
+                            <td class="best">1.4</td>
+                            <td>lightweight YOLO12</td>
                         </tr>
                         <tr>
-                        <td>YOLO12-S</td>
-                        <td>26.0</td>
-                        <td class="mid">0.935</td>
-                        <td class="mid">0.529</td>
-                        <td class="best">10.084</td>
-                        <td class="best">13.399</td>
-                        <td class="best">-9.366</td>
-                        <td class="best">40.8</td>
-                        <td class="mid">18.06</td>
-                        <td class="mid">2.0</td>
-                        <td>Train – best accuracy-efficiency</td>
+                            <td>YOLO12-S</td>
+                            <td>26.0</td>
+                            <td class="mid">0.935</td>
+                            <td class="mid">0.529</td>
+                            <td class="best">10.084</td>
+                            <td class="best">13.399</td>
+                            <td class="best">-9.366</td>
+                            <td class="best">40.8</td>
+                            <td class="mid">18.06</td>
+                            <td class="mid">2.0</td>
+                            <td>best accuracy-efficiency</td>
                         </tr>
                         <tr>
-                        <td>YOLO12-L</td>
-                        <td>47.0</td>
-                        <td class="best">0.939</td>
-                        <td class="best">0.531</td>
-                        <td class="mid">10.587</td>
-                        <td class="mid">14.032</td>
-                        <td class="mid">-10.080</td>
-                        <td class="worst">19.4</td>
-                        <td class="worst">51.05</td>
-                        <td class="worst">3.9</td>
-                        <td>Train3 – highest accuracy, slower FPS</td>
+                            <td>YOLO12-L</td>
+                            <td>47.0</td>
+                            <td class="best">0.939</td>
+                            <td class="best">0.531</td>
+                            <td class="mid">10.587</td>
+                            <td class="mid">14.032</td>
+                            <td class="mid">-10.080</td>
+                            <td class="worst">19.4</td>
+                            <td class="worst">51.05</td>
+                            <td class="worst">3.9</td>
+                            <td>highest accuracy, slower FPS</td>
                         </tr>
                         <tr>
-                        <td>RF-DETR Base</td>
-                        <td>31.9</td>
-                        <td class="worst">0.909</td>
-                        <td class="worst">0.507</td>
-                        <td class="worst">13.780</td>
-                        <td class="worst">17.933</td>
-                        <td class="worst">-13.747</td>
-                        <td class="mid">17.18</td>
-                        <td class="worst">351.62</td>
-                        <td class="mid">3.95</td>
-                        <td>Transformer – high model size, underperforms</td>
+                            <td>RF-DETR Base</td>
+                            <td>31.9</td>
+                            <td class="worst">0.909</td>
+                            <td class="worst">0.507</td>
+                            <td class="worst">13.780</td>
+                            <td class="worst">17.933</td>
+                            <td class="worst">-13.747</td>
+                            <td class="mid">17.18</td>
+                            <td class="worst">351.62</td>
+                            <td class="mid">3.95</td>
+                            <td>high model size, underperforms</td>
                         </tr>
                         <tr>
-                        <td>Cascade R-CNN</td>
-                        <td>44.2</td>
-                        <td class="worst">0.844</td>
-                        <td class="worst">0.456</td>
-                        <td class="worst">18.015</td>
-                        <td class="worst">24.759</td>
-                        <td class="worst">7.891</td>
-                        <td class="worst">3.08</td>
-                        <td class="worst">527.17</td>
-                        <td class="mid">3.3</td>
-                        <td>Two-stage – very slow, poor small-object AP</td>
+                            <td>Cascade R-CNN</td>
+                            <td>44.2</td>
+                            <td class="worst">0.844</td>
+                            <td class="worst">0.456</td>
+                            <td class="worst">18.015</td>
+                            <td class="worst">24.759</td>
+                            <td class="worst">7.891</td>
+                            <td class="worst">3.08</td>
+                            <td class="worst">527.17</td>
+                            <td class="mid">3.3</td>
+                            <td>very slow, poor small-object AP</td>
                         </tr>
                     </tbody>
                 </table>
