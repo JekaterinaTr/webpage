@@ -166,36 +166,25 @@
             <img src="images/edge_1.png" alt="Wheat Head Detection Project Overview">
 
             <p>
-                Using the wheat head dataset to demonstrate AI models fully optimized for edge devices. 
-                Focused on model selection, quantization, hardware-aware deployment, and real-world inference.
+                Real-time wheat head detection on edge devices using lightweight YOLO models, fully optimized for CPU and GPU deployment with quantization, ONNX/TensorRT/OpenVINO pipelines, and hardware-aware inference.”
             </p>
 
-            <div class="section-title">Workflow</div>
+           
+
+            <div class="section-title">Baseline Models</div>
+            <ul>
+                <li>YOLO12s: best balance accuracy ↔ speed</li>
+                <li>YOLO12n: ultra-lightweight for edge devices</li>
+                <li>YOLO26n / YOLO26s: latest edge-ready YOLO models</li>
+                
+            </ul>
+             <div class="section-title">Workflow</div>
             <p>
                 Dataset → Training (PyTorch) → Export (ONNX) → Optimization (TensorRT / OpenVINO / INT8) → 
                 Edge Device → Live Inference → Output (Counts / API / Dashboard)
             </p>
 
-            <div class="section-title">Step 1 — Baseline Models</div>
-            <ul>
-                <li>YOLO12s: best balance accuracy ↔ speed</li>
-                <li>YOLO12n: ultra-lightweight for edge devices</li>
-                <li>YOLO26n / YOLO26s: latest edge-ready YOLO models</li>
-                <li>SSD + MobileNetV4: alternative lightweight backbone</li>
-            </ul>
-
-            <div class="section-title">Step 2 — Edge Optimization Pipeline</div>
-            <p>
-                PyTorch → ONNX → TensorRT (Jetson) / OpenVINO (Intel CPU) → FP16 → INT8  
-                Metrics tracked at each stage: Model size, latency, FPS, mAP drop, MAE change.
-            </p>
-
-            <div class="section-title">Device Strategy</div>
-            <ul>
-                <li>🔵 Raspberry Pi: YOLO12n → ONNX → OpenVINO (INT8), 5–15 FPS</li>
-                <li>🟢 NVIDIA Jetson: YOLO12s → ONNX → TensorRT FP16, optional INT8, 20–60 FPS</li>
-                <li>🟣 Intel CPU Laptop: YOLO12s → OpenVINO INT8, 2–3× speedup vs raw PyTorch</li>
-            </ul>
+            
 
             <div class="section-title">Performance & Accuracy</div>
             <table class="metrics-table">
@@ -211,12 +200,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>YOLO12s</td><td>0.935</td><td>6.1</td><td>10.14</td><td>51.88</td><td>—</td><td>—</td></tr>
-                    <tr><td>YOLO12n</td><td>0.928</td><td>12.1</td><td>32.62</td><td>80</td><td>—</td><td>—</td></tr>
-                    <tr><td>YOLO11s</td><td>0.923</td><td>7.14</td><td>10.68</td><td>64.36</td><td>—</td><td>—</td></tr>
-                    <tr><td>YOLO11n</td><td>0.915</td><td>13.0</td><td>30.39</td><td>91.07</td><td>—</td><td>—</td></tr>
-                    <tr><td>YOLO26n</td><td>0.912</td><td>17.5</td><td>35.56</td><td>102.16</td><td>—</td><td>—</td></tr>
-                    <tr><td>YOLO26s</td><td>0.921</td><td>7.7</td><td>12.61</td><td>62.57</td><td>—</td><td>—</td></tr>
+                    <tr><td>YOLO12s</td><td>0.935</td><td>6.1</td><td>10.14</td><td>51.88</td>
+                    <tr><td>YOLO12n</td><td>0.928</td><td>12.1</td><td>32.62</td><td>80</td>
+                    <tr><td>YOLO11s</td><td>0.923</td><td>7.14</td><td>10.68</td><td>64.36</td>
+                    <tr><td>YOLO11n</td><td>0.915</td><td>13.0</td><td>30.39</td><td>91.07</td>
+                    <tr><td>YOLO26n</td><td>0.912</td><td>17.5</td><td>35.56</td><td>102.16</td>
+                    <tr><td>YOLO26s</td><td>0.921</td><td>7.7</td><td>12.61</td><td>62.57</td>
                 </tbody>
             </table>
 
