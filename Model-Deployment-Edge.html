@@ -114,20 +114,25 @@
         }
 
         .metrics-table {
-            border: 1px solid #ddd;
-            border-collapse: collapse;
-            padding: 8px;
-            margin: 20px auto;       /* centers the table horizontally */
-            width: 90%;              /* optional: control table width */
+            border-collapse: collapse;  /* ensures borders merge */
+            margin: 20px auto;          /* center table */
+            width: 90%;                  /* optional width */
+            font-family: Arial, sans-serif;
         }
-        .metrics-table th {
-            background-color: #cae7f3;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
+
+        .metrics-table th,
         .metrics-table td {
+            border: 1px solid #1c50a8;  /* strong, visible border */
+            padding: 10px 12px;
             text-align: center;
-            white-space: nowrap;
+        }
+
+        .metrics-table th {
+            background-color: #cae7f3;  /* bluish header */
+            font-weight: bold;
+        }
+        .metrics-table tr:hover {
+            background-color: #e0f0fb; /* subtle hover effect */
         }
 
         .workflow {
@@ -140,7 +145,7 @@
             }
 
             .step {
-            background: #b9e4f5; /* bluish box */
+            background: #c3cacc; /* bluish box */
             padding: 12px 18px;
             border-radius: 10px;
             text-align: center;
