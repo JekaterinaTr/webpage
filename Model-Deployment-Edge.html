@@ -99,6 +99,19 @@
             text-align: center; 
             margin-bottom: 10px;
         }
+        .model-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .model-box {
+            background: #f8f8f8;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
 
         .metrics-table, .metrics-table th, .metrics-table td {
             border: 1px solid #ddd;
@@ -172,13 +185,13 @@
 
            
 
-            <div class="section-title">Baseline Models</div>
-            <ul>
-                <li>YOLO12s: best balance accuracy ↔ speed</li>
-                <li>YOLO12n: ultra-lightweight for edge devices</li>
-                <li>YOLO26n / YOLO26s: latest edge-ready YOLO models</li>
-                
-            </ul>
+            <<h3>Baseline Models</h3>
+            <div class="model-summary">
+                <div class="model-box"><b>YOLO12s</b><br>Best balance between accuracy & speed</div>
+                <div class="model-box"><b>YOLO12n</b><br>Ultra-lightweight, edge-friendly</div>
+                <div class="model-box"><b>YOLO26n</b><br>Latest edge-ready YOLO, optimized for GPU</div>
+                <div class="model-box"><b>YOLO26s</b><br>Optimized for larger models, high accuracy</div>
+            </div>
              <div class="section-title">Workflow</div>
             <p>
                 Dataset → Training (PyTorch) → Export (ONNX) → Optimization (TensorRT / OpenVINO / INT8) → 
