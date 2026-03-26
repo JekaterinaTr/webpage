@@ -130,6 +130,31 @@
             white-space: nowrap;
         }
 
+        .workflow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 25px 0;
+            gap: 10px;
+            }
+
+            .step {
+            background: #b9e4f5; /* bluish box */
+            padding: 12px 18px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+            min-width: 120px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            }
+
+            .arrow {
+            font-size: 1.5em;
+            font-weight: bold;a
+            color: #1c50a8;
+            }
+
         .results {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -198,11 +223,22 @@
                 <div class="model-box"><b>YOLO26n</b><br>Latest edge-ready YOLO, optimized for GPU</div>
                 <div class="model-box"><b>YOLO26s</b><br>Optimized for larger models, high accuracy</div>
             </div>
-             <div class="section-title">Workflow</div>
-            <p>
-                Dataset → Training (PyTorch) → Export (ONNX) → Optimization (TensorRT / OpenVINO / INT8) → 
-                Edge Device → Live Inference → Output (Counts / API / Dashboard)
-            </p>
+            <h3>Workflow</h3>
+                <div class="workflow">
+                <div class="step">Dataset</div>
+                <div class="arrow">→</div>
+                <div class="step">Training (PyTorch)</div>
+                <div class="arrow">→</div>
+                <div class="step">Export (ONNX)</div>
+                <div class="arrow">→</div>
+                <div class="step">Optimization<br>(TensorRT / OpenVINO / INT8)</div>
+                <div class="arrow">→</div>
+                <div class="step">Edge Device</div>
+                <div class="arrow">→</div>
+                <div class="step">Live Inference</div>
+                <div class="arrow">→</div>
+                <div class="step">Output<br>(Counts / API / Dashboard)</div>
+            </div>
 
             
 
