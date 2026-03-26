@@ -70,13 +70,27 @@
         }
 
         .project h2 {
-            color: #E06666;
+            color: #058f2f;
             margin-top: 0;
         }
 
         .project p {
             line-height: 1.6;
         }
+        .model-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .model-box {
+            background: #f8f8f8;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
 
         .results {
             display: grid;
@@ -101,7 +115,7 @@
         .cta a {
             display: inline-block;
             padding: 12px 20px;
-            background: #E06666;
+            background: #058f2f;
             color: white;
             border-radius: 8px;
             font-weight: bold;
@@ -111,6 +125,16 @@
         .cta a:hover {
             background: #c94f4f;
         }
+        /* Table styling */
+        table { border-collapse: collapse; width: 100%; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-top: 25px; }
+        th, td { padding: 12px 15px; text-align: center; border-bottom: 1px solid #ddd; }
+        th { background-color: #4CAF50; color: white; position: sticky; top: 0; }
+        tr:hover { background-color: #f1f1f1; }
+        .best { background-color: #c6efce; color: #006100; font-weight: bold; }
+        .mid { background-color: #ffeb9c; color: #9c5700; }
+        .worst { background-color: #ffc7ce; color: #9c0006; }
+        caption { caption-side: top; font-size: 1.3em; font-weight: bold; margin-bottom: 10px; }
+   
     </style>
 </head>
 
@@ -133,7 +157,10 @@
 
         <!-- Featured project: Wheat Head Detection -->
         <div class="project">
-            <h2>Example: Wheat Head Detection (Dense Small-Object Detection)</h2>
+            <h2>Agricultural Dense Small-Object Detection: Wheat Heads</h2>
+
+            <img src="images/Wheathead_2.png" alt="Wheat Head Detection Project Overview">
+
             <p>
                 Detecting and counting wheat heads in highly dense field images is challenging due to small size, 
                 heavy overlap, and low contrast. This project demonstrates end-to-end AI model development: 
@@ -146,20 +173,149 @@
                 
             </p>
 
-            <h3>Evaluation & Metrics</h3>
-            <ul>
-                <li><b>Detection:</b> mAP@50, mAP@50–95</li>
-                <li><b>Counting:</b> MAE, RMSE</li>
-                <li><b>Performance:</b> FPS, GPU memory, model size</li>
-                <li><b>Robustness:</b> performance on sparse vs dense scenes</li>
-            </ul>
+            <img src="images/Wheathead_3.png" alt="Detection Process Illustration">
+
+            <h3>Model Summaries</h3>
+            <div class="model-summary">
+                <div class="model-box"><b>YOLO11</b><br>Fast, CNN-based single-stage detector</div>
+                <div class="model-box"><b>YOLO12</b><br>Modern CNN + lightweight transformer blocks</div>
+                <div class="model-box"><b>RF-DETR</b><br>Transformer-based set-prediction detector</div>
+                <div class="model-box"><b>Cascade R-CNN</b><br>Two-stage CNN, strong localization for larger objects</div>
+            </div>
+
+            <h3>Evaluation Table</h3>
+
+            <table>
+              <caption>Wheat Head Detection Benchmark – Model Comparison</caption>
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Params (M)</th>
+                  <th>mAP@0.5</th>
+                  <th>mAP@[0.5:0.95]</th>
+                  <th>MAE</th>
+                  <th>RMSE</th>
+                  <th>Bias</th>
+                  <th>FPS (GPU)</th>
+                  <th>Model Size (MB)</th>
+                  <th>Peak VRAM (GB)</th>
+                  <th>Notes / Run</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>YOLO11-N</td>
+                  <td>8.5</td>
+                  <td class="mid">0.915</td>
+                  <td class="mid">0.514</td>
+                  <td class="mid">11.978</td>
+                  <td class="mid">15.789</td>
+                  <td class="mid">-9.556</td>
+                  <td class="best">50.3</td>
+                  <td class="best">5.22</td>
+                  <td class="best">1.1</td>
+                  <td>Train38 – fastest, edge-friendly</td>
+                </tr>
+                <tr>
+                  <td>YOLO11-S</td>
+                  <td>22.3</td>
+                  <td class="mid">0.923</td>
+                  <td class="mid">0.521</td>
+                  <td class="mid">12.020</td>
+                  <td class="mid">15.774</td>
+                  <td class="mid">-10.646</td>
+                  <td class="mid">28.5</td>
+                  <td class="mid">18.29</td>
+                  <td class="mid">1.5</td>
+                  <td>Train39 – best detection in YOLO11</td>
+                </tr>
+                <tr>
+                  <td>YOLO11-L</td>
+                  <td>46.6</td>
+                  <td class="mid">0.921</td>
+                  <td class="mid">0.516</td>
+                  <td class="mid">12.000</td>
+                  <td class="mid">15.922</td>
+                  <td class="mid">-10.494</td>
+                  <td class="mid">22.32</td>
+                  <td class="mid">48.82</td>
+                  <td class="mid">3.1</td>
+                  <td>Train37 – largest YOLO11</td>
+                </tr>
+                <tr>
+                  <td>YOLO12-N</td>
+                  <td>9.0</td>
+                  <td class="mid">0.928</td>
+                  <td class="mid">0.520</td>
+                  <td class="mid">11.873</td>
+                  <td class="mid">15.684</td>
+                  <td class="mid">-11.418</td>
+                  <td class="mid">32.47</td>
+                  <td class="best">5.27</td>
+                  <td class="best">1.4</td>
+                  <td>Train2 – lightweight YOLO12</td>
+                </tr>
+                <tr>
+                  <td>YOLO12-S</td>
+                  <td>26.0</td>
+                  <td class="mid">0.935</td>
+                  <td class="mid">0.529</td>
+                  <td class="best">10.084</td>
+                  <td class="best">13.399</td>
+                  <td class="best">-9.366</td>
+                  <td class="best">40.8</td>
+                  <td class="mid">18.06</td>
+                  <td class="mid">2.0</td>
+                  <td>Train – best accuracy-efficiency</td>
+                </tr>
+                <tr>
+                  <td>YOLO12-L</td>
+                  <td>47.0</td>
+                  <td class="best">0.939</td>
+                  <td class="best">0.531</td>
+                  <td class="mid">10.587</td>
+                  <td class="mid">14.032</td>
+                  <td class="mid">-10.080</td>
+                  <td class="worst">19.4</td>
+                  <td class="worst">51.05</td>
+                  <td class="worst">3.9</td>
+                  <td>Train3 – highest accuracy, slower FPS</td>
+                </tr>
+                <tr>
+                  <td>RF-DETR Base</td>
+                  <td>31.9</td>
+                  <td class="worst">0.909</td>
+                  <td class="worst">0.507</td>
+                  <td class="worst">13.780</td>
+                  <td class="worst">17.933</td>
+                  <td class="worst">-13.747</td>
+                  <td class="mid">17.18</td>
+                  <td class="worst">351.62</td>
+                  <td class="mid">3.95</td>
+                  <td>Transformer – high model size, underperforms</td>
+                </tr>
+                <tr>
+                  <td>Cascade R-CNN</td>
+                  <td>44.2</td>
+                  <td class="worst">0.844</td>
+                  <td class="worst">0.456</td>
+                  <td class="worst">18.015</td>
+                  <td class="worst">24.759</td>
+                  <td class="worst">7.891</td>
+                  <td class="worst">3.08</td>
+                  <td class="worst">527.17</td>
+                  <td class="mid">3.3</td>
+                  <td>Two-stage – very slow, poor small-object AP</td>
+                </tr>
+              </tbody>
+            </table>
 
             <h3>Key Results</h3>
             <div class="results">
-                <div class="result-box"><b>Best Accuracy</b><br>YOLO12-L</div>
-                <div class="result-box"><b>Best Accuracy/Efficiency</b><br>YOLO12-S</div>
-                <div class="result-box"><b>Fastest</b><br>YOLO11-N</div>
-                <div class="result-box"><b>Insight</b><br>YOLO > RF-DETR & Cascade R-CNN</div>
+                <div class="result-box">🥇 Best Overall<br>YOLO12-L</div>
+                <div class="result-box">🥈 Best Accuracy/Efficiency<br>YOLO12-S</div>
+                <div class="result-box">⚡ Fastest / Edge<br>YOLO11-N</div>
+                <div class="result-box">🤖 Insight<br>YOLO > RF-DETR & Cascade R-CNN</div>
             </div>
 
             <div class="cta">
