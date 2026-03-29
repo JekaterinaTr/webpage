@@ -164,8 +164,8 @@
             border-radius: 12px;
             text-align: center;
             font-weight: bold;
-            width: 100px;
-            min-height: 50px; 
+            width: 120px;
+            min-height: 60px; 
             display: flex;
             justify-content: center;
             box-shadow: 0 8px 15px rgba(0,0,0,0.1); 
@@ -195,6 +195,18 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 15px;
             margin-top: 20px;
+        }
+
+        .insight-title {
+            font-weight: bold;
+            font-size: 1.05em;
+            color: #1c50a8;
+            margin-bottom: 4px;
+        }
+
+        .insight-desc {
+            font-size: 0.85em;
+            color: #555;
         }
         @media (max-width: 1200px) {
             .key-insights {
@@ -337,6 +349,43 @@
             </div>
             <div class="section-title">Key Insights</div>
             <div class="key-insights">
+                <div class="insight-card">
+                    <div class="insight-icon">⚡</div>
+                    <div class="insight-text">
+                        <div class="insight-title">Yolo26n: 102 FPS on GPU</div>
+                        <div class="insight-desc">Ideal for real-time monitoring</div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">🖥️</div>
+                    <div class="insight-text">
+                        <div class="insight-title">Nano models: 3× faster CPU</div>
+                        <div class="insight-desc">Raspberry Pi / CPU-only systems</div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">🚀</div>
+                    <div class="insight-text">
+                        <div class="insight-title">ONNX optimization </div>
+                        <div class="insight-desc">2–3× speed boost</div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">🌐</div>
+                    <div class="insight-text">
+                        <div class="insight-title">Fully offline</div>
+                        <div class="insight-desc">No cloud required</div>
+                    </div>
+                </div>
+
+
+
+
+
+
                 <div class="insight-card">
                     <div class="insight-icon">⚡</div>
                     <div class="insight-text">Yolo26n achieves 102 FPS on GPU with only 2.3% accuracy drop → ideal for real-time monitoring.</div>
