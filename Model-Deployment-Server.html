@@ -69,16 +69,50 @@
         .project h2 {
             color: #ff5967;
             margin-top: 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2em;
+        }
+        .project h3 {
+            color: #ff5967;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.5em;
         }
         .project p {
             line-height: 1.6;
         }
 
+        .project img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto; /* center and spacing */
+            border-radius: 10px;
+        }
+
         .section-title {
             margin-top: 25px;
-            font-size: 1.2em;
+            font-size: 1.5em;
             font-weight: bold;
             color: #ff5967;
+            text-align: center; 
+            margin-bottom: 10px;
+        }
+        .model-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .model-box {
+            background: #cae7f3;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
 
         .metrics-table, .metrics-table th, .metrics-table td {
@@ -133,22 +167,22 @@
         <!-- Featured project: Cloud Deployment -->
         <div class="project">
             <h2>Cloud Deployment of YOLO11 for Real-Time Pollen Detection</h2>
+            <img src="images/Cloud_2.png" alt="Wheat Head Detection Project Overview">
             <p>
-                This project demonstrates fully automated deployment of the YOLO11 model on a cloud server. 
-                It integrates with MongoDB for data storage, enabling real-time inference pipelines and dashboards.
+                Built an automated cloud-based pipeline for real-time object detection, combining scheduled data ingestion, model inference, and API-driven data access. 
+                The system leverages of IA models running on GPU/CPU, with results stored in a database for scalable 
+                analytics, monitoring, and dashboard integration. Supports batch processing and 
+                scheduled workflows for continuous data ingestion.
             </p>
+            <h3>Automation pipeline</h3>
+            <div class="model-summary">
+                <div class="model-box"><b>Server-hosted AI</b><br>Accessible via REST API</div>
+                <div class="model-box"><b>Automated Storage</b><br>Data stored and retrieved in database</div>
+                <div class="model-box"><b>Scheduled Workflows</b><br>Continuous data processing</div>
+                <div class="model-box"><b>Dashboard Visualization</b><br>Interactive reporting for end-users</div>
+            </div>
 
-            <div class="section-title">Project Overview</div>
-            <p>
-                Key goals were to provide:
-                <ul>
-                    <li>Server-hosted AI inference accessible via REST API</li>
-                    <li>Automated data storage and retrieval in MongoDB</li>
-                    <li>Scheduled workflows for continuous data processing</li>
-                    <li>Visualization and reporting dashboards for end-users</li>
-                </ul>
-            </p>
-
+            
             <div class="section-title">Deployment Architecture</div>
             <p>
                 <strong>YOLO11 Model:</strong> Trained for pollen detection on dense microscopy images.<br>
