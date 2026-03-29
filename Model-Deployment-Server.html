@@ -125,21 +125,34 @@
             }
 
         .step {
-            background: #e9eaeb;
+            background: #ebdedf;
             padding: 14px 22px;
             border-radius: 12px;
             text-align: center;
             font-weight: bold;
-            width: 120px;
-            min-height: 60px; 
+            width: 140px;         /* slightly wider for clarity */
+            min-height: 80px;     /* more space for subtext */
             display: flex;
+            flex-direction: column; /* stack title above subtitle */
             justify-content: center;
-            align-items: center; 
+            align-items: center;
             box-shadow: 0 8px 15px rgba(0,0,0,0.1); 
             transition: transform 0.3s, box-shadow 0.3s;
-            color: #141414; /* dark blue text for contrast */
+            color: #141414;
         }
 
+        .step-title {
+            font-size: 1.1em;      /* larger main title */
+            font-weight: bold;
+            margin-bottom: 4px;    /* small space before subtitle */
+        }
+
+        .step-subtitle {
+            font-size: 0.75em;     /* smaller subtext */
+            font-weight: normal;
+            color: #555;           /* lighter for contrast */
+            text-align: center;
+        }
         .step:hover {
             transform: translateY(-5px); /* subtle lift on hover */
             box-shadow: 0 12px 25px rgba(0,0,0,0.15); /* stronger shadow on hover */
@@ -338,43 +351,33 @@
             </div>
 
             
-            <h3>Workflow</h3>
-                <div class="workflow">
-                <div class="step">Data Ingestion<br>Scheduled / Batch</div>
-                <div class="arrow">→</div>
-                <div class="step">Model Inference<br>(GPU / CPU)</div>
-                <div class="arrow">→</div>
-                <div class="step">API & Data Management<br>Server endpoints, data routing</div>
-                <div class="arrow">→</div>
-                <div class="step">Database Storage<br>Results & Metadata</div>
-                <div class="arrow">→</div>
-                <div class="step">Analytics / Dashboard<br>Reports & Visualizations</div>
+           
                 
                 
             <h3>Workflow</h3>
             <div class="workflow">
                 <div class="step">
-                    <span class="step-title">Data Ingestion</span><br>
+                    <span class="step-title">Data Ingestion</span>
                     <span class="step-subtitle">Scheduled / Batch</span>
                 </div>
                 <div class="arrow">→</div>
                 <div class="step">
-                    <span class="step-title">Model Inference</span><br>
+                    <span class="step-title">Model Inference</span>
                     <span class="step-subtitle">(GPU / CPU)</span>
                 </div>
                 <div class="arrow">→</div>
                 <div class="step">
-                    <span class="step-title">API & Data Management</span><br>
+                    <span class="step-title">API & Data Management</span>
                     <span class="step-subtitle">Server endpoints, data routing</span>
                 </div>
                 <div class="arrow">→</div>
                 <div class="step">
-                    <span class="step-title">Database Storage</span><br>
+                    <span class="step-title">Database Storage</span>
                     <span class="step-subtitle">Results & Metadata</span>
                 </div>
                 <div class="arrow">→</div>
                 <div class="step">
-                    <span class="step-title">Analytics / Dashboard</span><br>
+                    <span class="step-title">Analytics / Dashboard</span>
                     <span class="step-subtitle">Reports & Visualizations</span>
                 </div>
             </div>
