@@ -67,14 +67,14 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         .project h2 {
-            color: #E06666;
+            color: #e56399;
             margin-top: 0;
             text-align: center;
             font-weight: bold;
             font-size: 2em;
         }
         .project h3 {
-            color: #E06666;
+            color: #913f61;
             font-weight: bold;
             margin-top: 25px;
             margin-bottom: 10px;
@@ -97,7 +97,7 @@
             margin-top: 25px;
             font-size: 1.5em;
             font-weight: bold;
-            color: #E06666;
+            color: #6d2241;
             text-align: center; 
             margin-bottom: 10px;
         }
@@ -157,7 +157,15 @@
             transform: scale(1.2); /* subtle zoom effect on hover */
         }
 
+        @media (max-width: 700px) {
+            .workflow {
+                flex-direction: column;
+            }
 
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
 
 
 
