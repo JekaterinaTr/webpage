@@ -108,7 +108,61 @@ git pull<!DOCTYPE html>
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
 
+        .workflow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 25px 0;
+            gap: 10px;
+            }
 
+        .step {
+            background: #fefefe;
+            padding: 14px 22px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            width: 140px;         /* slightly wider for clarity */
+            min-height: 80px;     /* more space for subtext */
+            display: flex;
+            flex-direction: column; /* stack title above subtitle */
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1); 
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #141414;
+            border: 2px solid #058f2f;
+        }
+
+        .step-title {
+            font-size: 1.1em;      /* larger main title */
+            font-weight: bold;
+            margin-bottom: 4px;    /* small space before subtitle */
+        }
+
+        .step-subtitle {
+            font-size: 0.75em;     /* smaller subtext */
+            font-weight: normal;
+            color: #555;           /* lighter for contrast */
+            text-align: center;
+        }
+        .step:hover {
+            transform: translateY(-5px); /* subtle lift on hover */
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15); /* stronger shadow on hover */
+        }
+
+        .arrow {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #a01e52;
+            margin: 0 5px;
+            transition: transform 0.3s;
+        }
+
+        .arrow:hover {
+            transform: scale(1.2); /* subtle zoom effect on hover */
+        }
         .results {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -214,6 +268,39 @@ git pull<!DOCTYPE html>
                 <div class="model-box"><b>YOLO12</b><br>Modern CNN + lightweight transformer blocks</div>
                 <div class="model-box"><b>RF-DETR</b><br>Transformer-based set-prediction detector</div>
                 <div class="model-box"><b>Cascade R-CNN</b><br>Two-stage CNN, strong localization for larger objects</div>
+            </div>
+
+            <h3>Workflow</h3>
+            <div class="workflow">
+                <div class="step">
+                    <span class="step-title">Data Acquisition & Labeling</span>
+                    <span class="step-subtitle">Quality check & review</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <span class="step-title">Data Augmentation & Preprocessing</span>
+                    <span class="step-subtitle">Rotation, Scaling, Synthetic Data</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <span class="step-title">Model Training</span>
+                    <span class="step-subtitle">GPU / Multi-GPU</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <span class="step-title">Hyperparameter Optimization</span>
+                    <span class="step-subtitle">LR, Batch Size, Epochs</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <span class="step-title">Evaluation & Validation</span>
+                    <span class="step-subtitle">mAP, precision, recall, F1</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <span class="step-title">Test on Real-Life Data</span>
+                    <span class="step-subtitle">Field Images / Live Deployment</span>
+                </div>
             </div>
 
             <h3>Evaluation Table</h3>
