@@ -163,6 +163,16 @@ git pull<!DOCTYPE html>
         .arrow:hover {
             transform: scale(1.2); /* subtle zoom effect on hover */
         }
+
+        @media (max-width: 700px) {
+            .workflow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
         .results {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
