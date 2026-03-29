@@ -125,7 +125,7 @@
             }
 
         .step {
-            background: #ebdedf;
+            background: #e9eaeb;
             padding: 14px 22px;
             border-radius: 12px;
             text-align: center;
@@ -206,7 +206,17 @@
             }
         }
 
+        .step-title {
+            font-size: 1.1em;      /* bigger main title */
+            font-weight: bold;
+            display: block;        /* ensures it stays on its own line */
+        }
 
+        .step-subtitle {
+            font-size: 0.8em;      /* smaller subtext */
+            font-weight: normal;
+            color: #555;           /* lighter color for contrast */
+        }
 
         .key-insights {
             display: grid;
@@ -341,6 +351,32 @@
                 <div class="step">Analytics / Dashboard<br>Reports & Visualizations</div>
                 
                 
+            <h3>Workflow</h3>
+            <div class="workflow">
+                <div class="step">
+                    <span class="step-title">Data Ingestion</span><br>
+                    <span class="step-subtitle">Scheduled / Batch</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <span class="step-title">Model Inference</span><br>
+                    <span class="step-subtitle">(GPU / CPU)</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <span class="step-title">API & Data Management</span><br>
+                    <span class="step-subtitle">Server endpoints, data routing</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <span class="step-title">Database Storage</span><br>
+                    <span class="step-subtitle">Results & Metadata</span>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step">
+                    <span class="step-title">Analytics / Dashboard</span><br>
+                    <span class="step-subtitle">Reports & Visualizations</span>
+                </div>
             </div>
 
 
@@ -379,7 +415,7 @@
                         <div class="insight-desc">Continuous data ingestion and inference</div>
                     </div>
                 </div>
-
+            </div>
 
 
 
