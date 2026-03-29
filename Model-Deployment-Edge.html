@@ -216,38 +216,29 @@
         }
 
         @media (max-width: 700px) {
-            .key-insights {
-                grid-template-columns: 1fr;            /* 1 per row on small screens */
-            }
-        }
-
-        @media (max-width: 700px) {
 
             .key-insights {
+                display: grid;
                 grid-template-columns: 1fr;
-                justify-items: center;   /* 🔥 center cards */
+                justify-content: center;     /* center grid */
+                justify-items: center;       /* center cards */
             }
 
             .insight-card {
-                width: 90%;              /* 🔥 prevent full width */
-                max-width: 320px;       /* 🔥 nice card size */
-                padding: 14px 16px;     /* 🔥 smaller padding */
+                width: 85%;                  /* 🔥 smaller than full width */
+                max-width: 280px;            /* 🔥 nice compact card */
                 
-                flex-direction: column; /* 🔥 stack icon + text */
-                align-items: center;    /* 🔥 center everything */
-                text-align: center;     /* 🔥 center text */
+                padding: 14px 12px;          /* 🔥 reduce size */
+                
+                flex-direction: column;      /* stack */
+                align-items: center;         /* center content */
+                text-align: center;
+
+                min-height: auto;            /* 🔥 remove big height */
             }
 
             .insight-icon {
-                margin-bottom: 6px;     /* spacing between icon and text */
-            }
-
-            .insight-title {
-                font-size: 1em;
-            }
-
-            .insight-desc {
-                font-size: 0.8em;
+                margin-bottom: 6px;
             }
         }
 
@@ -262,20 +253,27 @@
         }
 
         .insight-card {
-            background: #e9eaeb; /* light grey-blue */
-            border-radius: 12px;
+            background: linear-gradient(145deg, #f0f0f0, #dcdcdc); /* subtle gradient */
+            border-radius: 14px;
             padding: 18px 20px;
+
             display: flex;
             align-items: flex-start;
             gap: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
-            min-height: 90px;
+
+            /* 🔥 REAL DEPTH */
+            box-shadow: 
+                6px 6px 12px rgba(0,0,0,0.12),
+                -4px -4px 8px rgba(255,255,255,0.7);
+
+            transition: all 0.25s ease;
         }
 
         .insight-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 
+                10px 10px 20px rgba(0,0,0,0.18),
+                -6px -6px 12px rgba(255,255,255,0.8);
         }
 
         .insight-icon {
