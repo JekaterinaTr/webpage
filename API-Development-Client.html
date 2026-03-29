@@ -213,7 +213,22 @@
             }
         }
 
-        
+        .api-preview {
+            text-align: center;
+            margin: 20px 0 25px 0;
+        }
+
+        .api-preview img {
+            width: 100%;
+            max-width: 750px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .api-preview img:hover {
+            transform: scale(1.02);
+        }
 
         .cta {
             margin-top: 25px;
@@ -276,18 +291,14 @@
 
             
 
-            <div class="section-title">Data Access & Outputs</div>
-            <ul>
-                <li>CSV for tabular analysis</li>
-                <li>Graphs & charts for visual insights</li>
-                <li>Annotated images for object detection predictions</li>
-            </ul>
-            <p>
-                The API can be accessed via Python scripts, desktop apps, or a future web-based platform using Streamlit, Dash, or React.
-            </p>
+            
 
            
             <div class="section-title">Business & Client Impact</div>
+            <!-- API UI IMAGE -->
+            <div class="api-preview">
+                <img src="images/api_4.png" alt="API Interface Example">
+            </div>
             <div class="key-insights">
 
                 <div class="insight-card">
