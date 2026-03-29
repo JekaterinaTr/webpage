@@ -100,6 +100,19 @@
             margin-bottom: 10px;
         }
 
+        .model-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .model-box {
+            background: #f6c59b;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
 
 
         
@@ -136,7 +149,7 @@
             <h3>API Development for Clients</h3>
             <p>
                 Centralized API development enabling clients to access AI predictions, analytics, and visualizations. 
-                Supports multiple formats (CSV, charts, images) with future-ready web or desktop dashboards.
+                Supports multiple formats (CSV, charts, images) with web or desktop dashboards.
             </p>
         </div>
     </section>
@@ -151,8 +164,18 @@
             <h2>Interactive Client API & Data Access</h2>
             <img src="images/api_3.png" alt="API development overview">
             <p>
-                Developed a flexible API allowing clients to extract AI predictions, analytics, and visualization outputs in multiple formats.
+                Flexible API allowing clients to acess AI predictions, analytics, and visualizations through a web dashboards or desctop applications.
             </p>
+
+            <h3>Technologies & Tools</h3>
+            <div class="model-summary">
+                <div class="model-box"><b>Interactive dashboards</b><br>Streamlit or Dash</div>
+                <div class="model-box"><b>Analytics and visualization</b><br>Pandas, Matplotlib, Plotly</div>
+                <div class="model-box"><b>Offline Desktop App</b><br>Tkinter or PyQt</div>
+                <div class="model-box"><b>Dashboard Visualization</b><br>Interactive reporting for end-users</div>
+            </div>
+
+
             
 
             <div class="section-title">Data Access & Outputs</div>
@@ -165,55 +188,11 @@
                 The API can be accessed via Python scripts, desktop apps, or a future web-based platform using Streamlit, Dash, or React.
             </p>
 
-            <div class="section-title">Technologies & Tools</div>
-            <ul>
-                <li>Python | FastAPI | REST API</li>
-                <li>MongoDB / PostgreSQL for structured storage</li>
-                <li>Pandas, Matplotlib, Plotly for analytics and visualization</li>
-                <li>Streamlit / Dash for interactive dashboards</li>
-                <li>Tkinter for optional desktop GUI</li>
-                <li>Docker for deployment & reproducibility</li>
-            </ul>
+           
 
-            <div class="section-title">Architecture & Workflow</div>
-            <div class="diagram">
-<pre>
-┌───────────────────────────────┐
-│        CLIENT API LAYER       │
-│ Central API endpoint serving: │
-│ • CSV, Graphs, Annotated Images │
-└───────────────┬───────────────┘
-                │
-                ▼
-┌───────────────────────────────┐
-│     DATA & MODEL INTERFACE    │
-│ • Query MongoDB / SQL         │
-│ • Precomputed statistics      │
-│ • On-demand model inference   │
-└───────────────┬───────────────┘
-                │
-        ┌───────┴────────┐
-        ▼                ▼
-┌───────────────┐   ┌─────────────────┐
-│ CSV Output    │   │ Graphs / Charts │
-└───────────────┘   └─────────┬───────┘
-                          │
-                          ▼
-                 ┌─────────────────┐
-                 │ Annotated Images│
-                 │ Prediction Data │
-                 └─────────────────┘
-</pre>
-            </div>
+            
 
-            <div class="section-title">Future Web Frontend Approaches</div>
-            <ul>
-                <li><strong>Streamlit:</strong> Fast integration with Python API, interactive graphs, and widgets</li>
-                <li><strong>Dash / Plotly Dash:</strong> Multi-page, reactive dashboards with callbacks for live updates</li>
-                <li><strong>React / Next.js + FastAPI:</strong> Fully modern web portal with responsive design and rich interactivity</li>
-                <li><strong>Gradio:</strong> Quick demos for model predictions on images or videos</li>
-                <li><strong>Desktop App:</strong> PyQt or Tkinter interface for offline API access</li>
-            </ul>
+            
 
             <div class="section-title">Business & Client Impact</div>
             <ul>
