@@ -107,13 +107,111 @@
             margin: 20px 0;
         }
         .model-box {
-            background: #f6c59b;
+            background: #f1dcc9;
             padding: 12px;
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
 
+        .insight-card {
+            background: linear-gradient(145deg, #f0f0f0, #dcdcdc); /* subtle gradient */
+            border-radius: 14px;
+            padding: 18px 20px;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+
+            /* 🔥 REAL DEPTH */
+            box-shadow: 
+                6px 6px 12px rgba(0,0,0,0.12),
+                -4px -4px 8px rgba(255,255,255,0.7);
+
+            transition: all 0.25s ease;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 
+                10px 10px 20px rgba(0,0,0,0.18),
+                -6px -6px 12px rgba(255,255,255,0.8);
+        }
+
+        .insight-icon {
+            font-size: 1.8em;
+            color: #a01e52; /* deep blue icon */
+            flex-shrink: 0;
+        }
+
+        .insight-text {
+            font-size: 0.95em;
+            line-height: 1.4;
+            color: #555;
+        }
+
+         .key-insights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .insight-title {
+            font-weight: bold;
+            font-size: 1.05em;
+            color: #a01e52;
+            margin-bottom: 4px;
+        }
+
+        .insight-desc {
+            font-size: 0.85em;
+            color: #555;
+        }
+        @media (max-width: 1200px) {
+            .key-insights {
+                grid-template-columns: repeat(2, 1fr); /* 2 per row on medium screens */
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .key-insights {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .insight-card {
+                width: 90%;
+                max-width: 320px;
+                padding: 12px 14px;
+
+                display: flex;
+                flex-direction: row;      /* ✅ KEEP ROW */
+                align-items: center;      /* ✅ vertical center */
+                gap: 10px;
+            }
+
+            .insight-text {
+                text-align: left;         /* keep readable */
+                flex: 1;                  /* ✅ take remaining space */
+            }
+
+            .insight-title {
+                font-size: 0.95em;        /* slightly smaller so it fits */
+                line-height: 1.2;
+            }
+
+            .insight-desc {
+                font-size: 0.75em;
+            }
+
+            .insight-icon {
+                font-size: 1.4em;         /* slightly smaller icon */
+            }
+        }
 
         
 
@@ -189,18 +287,44 @@
             </p>
 
            
-
-            
-
-            
-
             <div class="section-title">Business & Client Impact</div>
-            <ul>
-                <li>Clients can retrieve structured insights without coding knowledge</li>
-                <li>Supports multiple output formats: CSV, graphs, images</li>
-                <li>Scalable solution for future dashboards or mobile apps</li>
-                <li>Strong foundation for integrating real-time AI analytics into client workflows</li>
-            </ul>
+            <div class="key-insights">
+
+                <div class="insight-card">
+                    <div class="insight-icon">🧩</div>
+                    <div class="insight-text">
+                        <div class="insight-title">No-Code Data Access</div>
+                        <div class="insight-desc">Clients retrieve structured insights without needing programming knowledge</div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">📊</div>
+                    <div class="insight-text">
+                        <div class="insight-title">Flexible Outputs</div>
+                        <div class="insight-desc">Supports CSV, visualizations, and image-based outputs for different use cases</div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">📱</div>
+                    <div class="insight-text">
+                        <div class="insight-title">Scalable Integration</div>
+                        <div class="insight-desc">Ready for dashboards, mobile apps, or external client platforms</div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">⚡</div>
+                    <div class="insight-text">
+                        <div class="insight-title">Real-Time AI Access</div>
+                        <div class="insight-desc">Enables seamless integration of live AI analytics into client workflows</div>
+                    </div>
+                </div>
+
+            </div>
+            
+
 
             
         </div>
