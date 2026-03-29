@@ -74,7 +74,7 @@
             font-size: 2em;
         }
         .project h3 {
-            color: #913f61;
+            color: #e56399;
             font-weight: bold;
             margin-top: 25px;
             margin-bottom: 10px;
@@ -97,7 +97,7 @@
             margin-top: 25px;
             font-size: 1.5em;
             font-weight: bold;
-            color: #6d2241;
+            color: #e56399;
             text-align: center; 
             margin-bottom: 10px;
         }
@@ -169,17 +169,67 @@
 
 
 
-        .metrics-table, .metrics-table th, .metrics-table td {
-            border: 1px solid #ddd;
-            border-collapse: collapse;
-            padding: 8px;
+        .key-insights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
         }
-        .metrics-table th {
-            background-color: #f0f0f0;
+
+        .insight-title {
+            font-weight: bold;
+            font-size: 1.05em;
+            color: #E06666;
+            margin-bottom: 4px;
         }
-        .metrics-table td {
-            text-align: center;
+
+        .insight-desc {
+            font-size: 0.85em;
+            color: #555;
         }
+        @media (max-width: 1200px) {
+            .key-insights {
+                grid-template-columns: repeat(2, 1fr); /* 2 per row on medium screens */
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .key-insights {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .insight-card {
+                width: 90%;
+                max-width: 320px;
+                padding: 12px 14px;
+
+                display: flex;
+                flex-direction: row;      /* ✅ KEEP ROW */
+                align-items: center;      /* ✅ vertical center */
+                gap: 10px;
+            }
+
+            .insight-text {
+                text-align: left;         /* keep readable */
+                flex: 1;                  /* ✅ take remaining space */
+            }
+
+            .insight-title {
+                font-size: 0.95em;        /* slightly smaller so it fits */
+                line-height: 1.2;
+            }
+
+            .insight-desc {
+                font-size: 0.75em;
+            }
+
+            .insight-icon {
+                font-size: 1.4em;         /* slightly smaller icon */
+            }
+        }
+
 
         .cta {
             margin-top: 25px;
@@ -253,32 +303,7 @@
             </div>
 
 
-            <div class="section-title">Workflow</div>
-            <ol>
-                <li>Upload images via API / batch directory.</li>
-                <li>YOLO11 model inference on server GPU or CPU fallback.</li>
-                <li>Store results (bounding boxes, class, confidence, timestamps) in MongoDB.</li>
-                <li>Trigger downstream processing for analytics dashboards or CSV exports.</li>
-                <li>Optional edge synchronization: model can run offline if needed.</li>
-            </ol>
-
-            <div class="section-title">Performance Metrics</div>
-            <table class="metrics-table">
-                <thead>
-                    <tr>
-                        <th>Model</th>
-                        <th>mAP</th>
-                        <th>GPU FPS</th>
-                        <th>CPU FPS</th>
-                        <th>DB Storage Latency</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>YOLO11s</td><td>0.923</td><td>64 FPS</td><td>10 FPS</td><td>5–8 ms</td></tr>
-                    <tr><td>YOLO11n</td><td>0.915</td><td>91 FPS</td><td>30 FPS</td><td>5 ms</td></tr>
-                </tbody>
-            </table>
-
+            
             <div class="section-title">Automation & Cloud Integration</div>
             <ul>
                 <li>Flask REST API exposes endpoints for image upload and inference requests.</li>
@@ -286,6 +311,43 @@
                 <li>MongoDB stores results with indexing for fast retrieval and analytics.</li>
                 <li>Optional dashboard integration with Plotly / Dash or React for live visualization.</li>
             </ul>
+
+            <div class="section-title">Business & Technical Impact</div>
+            <div class="key-insights">
+                <div class="insight-card">
+                    <div class="insight-icon">🔗</div>
+                    <div class="insight-text">
+                        <div class="insight-title">End-to-End Deployment</div>
+                        <div class="insight-desc">From model inference to server, database, and dashboard integration</div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">⚙️</div>
+                    <div class="insight-text">
+                        <div class="insight-title">Extensible & Automated</div>
+                        <div class="insight-desc">Easily extendable with new models, features, or scheduled workflows</div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">☁️</div>
+                    <div class="insight-text">
+                        <div class="insight-title">Scalable Cloud</div>
+                        <div class="insight-desc">Scales across multiple cloud nodes or hybrid edge-cloud setups</div>
+                    </div>
+                </div>
+
+                <div class="insight-card">
+                    <div class="insight-icon">📡</div>
+                    <div class="insight-text">
+                        <div class="insight-title">Automated Monitoring</div>
+                        <div class="insight-desc">Continuous data ingestion and inference</div>
+                    </div>
+                </div>
+
+
+
 
             <div class="section-title">Business & Technical Impact</div>
             <ul>
