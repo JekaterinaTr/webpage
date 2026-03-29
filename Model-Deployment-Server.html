@@ -67,14 +67,14 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         .project h2 {
-            color: #702e33;
+            color: #E06666;
             margin-top: 0;
             text-align: center;
             font-weight: bold;
             font-size: 2em;
         }
         .project h3 {
-            color: #702e33;
+            color: #E06666;
             font-weight: bold;
             margin-top: 25px;
             margin-bottom: 10px;
@@ -97,7 +97,7 @@
             margin-top: 25px;
             font-size: 1.5em;
             font-weight: bold;
-            color: #702e33;
+            color: #E06666;
             text-align: center; 
             margin-bottom: 10px;
         }
@@ -108,12 +108,58 @@
             margin: 20px 0;
         }
         .model-box {
-            background: #f4d2d4;
+            background: #ebdedf;
             padding: 12px;
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
+
+        .workflow {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 25px 0;
+            gap: 10px;
+            }
+
+        .step {
+            background: #ebdedf
+            padding: 14px 22px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            width: 120px;
+            min-height: 60px; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1); 
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #141414; /* dark blue text for contrast */
+        }
+
+        .step:hover {
+            transform: translateY(-5px); /* subtle lift on hover */
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15); /* stronger shadow on hover */
+        }
+
+        .arrow {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #E06666;
+            margin: 0 5px;
+            transition: transform 0.3s;
+        }
+
+        .arrow:hover {
+            transform: scale(1.2); /* subtle zoom effect on hover */
+        }
+
+
+
+
 
         .metrics-table, .metrics-table th, .metrics-table td {
             border: 1px solid #ddd;
@@ -183,13 +229,21 @@
             </div>
 
             
-            <div class="section-title">Deployment Architecture</div>
-            <p>
-                <strong>YOLO11 Model:</strong> Trained for pollen detection on dense microscopy images.<br>
-                <strong>Server Stack:</strong> Ubuntu server + Python 3.11 + PyTorch + Flask API + Gunicorn + Nginx<br>
-                <strong>Database:</strong> MongoDB for storing detection results, timestamps, and metadata<br>
-                <strong>Automation:</strong> Cron jobs or Celery pipelines for scheduled inference
-            </p>
+            <h3>Workflow</h3>
+                <div class="workflow">
+                <div class="step">Data Ingestion<br>Scheduled / Batch</div>
+                <div class="arrow">→</div>
+                <div class="step">Model Inference<br>(GPU / CPU)</div>
+                <div class="arrow">→</div>
+                <div class="step">API & Data Management<br>Server endpoints, data routing</div>
+                <div class="arrow">→</div>
+                <div class="step">Database Storage<br>Results & Metadata</div>
+                <div class="arrow">→</div>
+                <div class="step">Analytics / Dashboard<br>Reports & Visualizations</div>
+                
+                
+            </div>
+
 
             <div class="section-title">Workflow</div>
             <ol>
