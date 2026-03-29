@@ -157,6 +157,45 @@
             transform: scale(1.2); /* subtle zoom effect on hover */
         }
 
+        .insight-card {
+            background: linear-gradient(145deg, #f0f0f0, #dcdcdc); /* subtle gradient */
+            border-radius: 14px;
+            padding: 18px 20px;
+
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+
+            /* 🔥 REAL DEPTH */
+            box-shadow: 
+                6px 6px 12px rgba(0,0,0,0.12),
+                -4px -4px 8px rgba(255,255,255,0.7);
+
+            transition: all 0.25s ease;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 
+                10px 10px 20px rgba(0,0,0,0.18),
+                -6px -6px 12px rgba(255,255,255,0.8);
+        }
+
+        .insight-icon {
+            font-size: 1.8em;
+            color: #E06666; /* deep blue icon */
+            flex-shrink: 0;
+        }
+
+        .insight-text {
+            font-size: 0.95em;
+            line-height: 1.4;
+            color: #555;
+        }
+
+
         @media (max-width: 700px) {
             .workflow {
                 flex-direction: column;
@@ -304,13 +343,6 @@
 
 
             
-            <div class="section-title">Automation & Cloud Integration</div>
-            <ul>
-                <li>Flask REST API exposes endpoints for image upload and inference requests.</li>
-                <li>Celery worker manages scheduled batch inference and retries for large datasets.</li>
-                <li>MongoDB stores results with indexing for fast retrieval and analytics.</li>
-                <li>Optional dashboard integration with Plotly / Dash or React for live visualization.</li>
-            </ul>
 
             <div class="section-title">Business & Technical Impact</div>
             <div class="key-insights">
@@ -349,13 +381,6 @@
 
 
 
-            <div class="section-title">Business & Technical Impact</div>
-            <ul>
-                <li>Enables continuous pollen monitoring with minimal human intervention.</li>
-                <li>Scalable to multiple cloud nodes or hybrid edge-cloud setups.</li>
-                <li>Demonstrates end-to-end AI deployment: model → server → database → dashboard.</li>
-                <li>Foundation for integrating additional models or automated triggers for alerts.</li>
-            </ul>
 
             <div class="cta">
                 <a href="https://github.com/YOUR_GITHUB_LINK" target="_blank">View Deployment Pipeline</a>
