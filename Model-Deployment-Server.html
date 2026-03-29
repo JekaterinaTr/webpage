@@ -14,16 +14,38 @@
         a { text-decoration: none; color: inherit; }
 
         /* Hero section */
-        .hero {
-            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
-            color: white;
+       .hero {
+            background-image: url("images/cloud_1.png");
+            background-size: cover;  
+            background-position: center; 
+            background-repeat: no-repeat;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 80px 20px;
+            
         }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+
+            /* ✨ Card style */
+            background: rgba(255, 255, 255, 0.4); /* semi-transparent */
+            backdrop-filter: blur(8px); /* glass effect (modern look) */
+            
+            padding: 30px 40px;
+            border-radius: 20px;
+            
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
         .hero h3 {
             font-size: 2em;
             margin-bottom: 15px;
         }
+
         .hero p {
             font-size: 1.2em;
             max-width: 700px;
@@ -93,12 +115,17 @@
 
     <!-- Hero section -->
     <section class="hero">
-        <h3>IA Integration Pipeline & Automation</h3>
-        <p>
-            Edge inference, production pipelines, automated workflows, server deployment, 
-            and cloud-based data integration for scalable AI applications.
-        </p>
+        <div class="hero-content">
+
+            <h3>IA Integration Pipeline & Automation</h3>
+            <p>
+                Production pipelines, automated workflows, server deployment, 
+                and cloud-based data integration for scalable AI applications.
+            </p>
+        </div>
     </section>
+
+   
 
     <!-- Projects container -->
     <div class="container">
