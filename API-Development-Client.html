@@ -15,10 +15,29 @@
 
         /* Hero section */
         .hero {
-            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
-            color: white;
+            background-image: url("images/api_1.png");
+            background-size: cover;  
+            background-position: bottom center; 
+            background-repeat: no-repeat;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 80px 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+
+            /* ✨ Card style */
+            background: rgba(255, 255, 255, 0.4); /* semi-transparent */
+            backdrop-filter: blur(8px); /* glass effect (modern look) */
+            
+            padding: 30px 40px;
+            border-radius: 20px;
+            
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         }
         .hero h3 {
             font-size: 2em;
@@ -31,7 +50,7 @@
             line-height: 1.6;
         }
 
-        /* Container */
+        /* Projects container */
         .container {
             max-width: 1000px;
             margin: auto;
@@ -45,37 +64,45 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         .project h2 {
-            color: #ff7e5f;
+            color: #ab5001;
             margin-top: 0;
-            font-size: 1.8em;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2em;
+        }
+
+        .project h3 {
+            color: #ab5001;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.5em;
         }
         .project p {
             line-height: 1.6;
-            margin-bottom: 15px;
+        }
+
+        .project img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto; /* center and spacing */
+            border-radius: 10px;
         }
 
         .section-title {
             margin-top: 25px;
-            font-size: 1.3em;
+            font-size: 1.5em;
             font-weight: bold;
-            color: #feb47b;
-        }
-        .project ul {
-            padding-left: 20px;
-            margin: 10px 0 15px 0;
-        }
-        .project li {
-            margin-bottom: 8px;
-            line-height: 1.5;
+            color: #ab5001;
+            text-align: center; 
+            margin-bottom: 10px;
         }
 
-        .diagram, pre {
-            background: #f0f0f0;
-            padding: 15px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-family: monospace;
-        }
+
+
+        
 
         .cta {
             margin-top: 25px;
@@ -105,12 +132,17 @@
 
     <!-- Hero Section  -->
     <section class="hero">
-        <h3>API Development for Client</h3>
-        <p>
-            Centralized API development enabling clients to access AI predictions, analytics, and visualizations. 
-            Supports multiple formats (CSV, charts, images) with future-ready web or desktop dashboards.
-        </p>
+        <div class="hero-content">
+            <h3>API Development for Clients</h3>
+            <p>
+                Centralized API development enabling clients to access AI predictions, analytics, and visualizations. 
+                Supports multiple formats (CSV, charts, images) with future-ready web or desktop dashboards.
+            </p>
+        </div>
     </section>
+
+
+    
 
     <!-- Container -->
     <div class="container">
