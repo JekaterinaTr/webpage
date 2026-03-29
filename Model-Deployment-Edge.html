@@ -113,10 +113,23 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
 
+        .table-container {
+            width: 100%;
+            overflow-x: auto;   /* enables horizontal scroll */
+            -webkit-overflow-scrolling: touch; /* smooth scroll on mobile */
+        }
+
+        .table-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .table-container::-webkit-scrollbar-thumb {
+            background: #1c50a8;
+            border-radius: 10px;
+        }
         .metrics-table {
             border-collapse: collapse;  /* ensures borders merge */
             margin: 20px auto;          /* center table */
-            width: 90%;                  /* optional width */
+            min-width: 600px;                 /* optional width */
             font-family: Arial, sans-serif;
         }
 
@@ -125,6 +138,7 @@
             border: 1px solid #1c50a8;  /* strong, visible border */
             padding: 10px 12px;
             text-align: center;
+            white-space: nowrap;
         }
 
         .metrics-table th {
@@ -299,27 +313,28 @@
             
 
             <div class="section-title">Performance & Accuracy</div>
-            <table class="metrics-table">
-                <thead>
-                    <tr>
-                        <th>Model</th>
-                        <th>mAP</th>
-                        <th>PyTorch CPU FPS</th>
-                        <th>ONNX CPU FPS</th>
-                        <th>ONNX CUDA FP32</th>
-                        
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>YOLO12s</td><td>0.935</td><td>6.1</td><td>10.14</td><td>51.88</td>
-                    <tr><td>YOLO12n</td><td>0.928</td><td>12.1</td><td>32.62</td><td>80</td>
-                    <tr><td>YOLO11s</td><td>0.923</td><td>7.14</td><td>10.68</td><td>64.36</td>
-                    <tr><td>YOLO11n</td><td>0.915</td><td>13.0</td><td>30.39</td><td>91.07</td>
-                    <tr><td>YOLO26n</td><td>0.912</td><td>17.5</td><td>35.56</td><td>102.16</td>
-                    <tr><td>YOLO26s</td><td>0.921</td><td>7.7</td><td>12.61</td><td>62.57</td>
-                </tbody>
-            </table>
-
+            <div class="table-container">
+                <table class="metrics-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>mAP</th>
+                            <th>PyTorch CPU FPS</th>
+                            <th>ONNX CPU FPS</th>
+                            <th>ONNX CUDA FP32</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>YOLO12s</td><td>0.935</td><td>6.1</td><td>10.14</td><td>51.88</td>
+                        <tr><td>YOLO12n</td><td>0.928</td><td>12.1</td><td>32.62</td><td>80</td>
+                        <tr><td>YOLO11s</td><td>0.923</td><td>7.14</td><td>10.68</td><td>64.36</td>
+                        <tr><td>YOLO11n</td><td>0.915</td><td>13.0</td><td>30.39</td><td>91.07</td>
+                        <tr><td>YOLO26n</td><td>0.912</td><td>17.5</td><td>35.56</td><td>102.16</td>
+                        <tr><td>YOLO26s</td><td>0.921</td><td>7.7</td><td>12.61</td><td>62.57</td>
+                    </tbody>
+                </table>
+            </div>
             <div class="section-title">Key Insights</div>
             <div class="key-insights">
                 <div class="insight-card">
