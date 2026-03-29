@@ -218,27 +218,37 @@
         @media (max-width: 700px) {
 
             .key-insights {
-                display: grid;
                 grid-template-columns: 1fr;
-                justify-content: center;     /* center grid */
-                justify-items: center;       /* center cards */
+                justify-items: center;
             }
 
             .insight-card {
-                width: 85%;                  /* 🔥 smaller than full width */
-                max-width: 280px;            /* 🔥 nice compact card */
-                
-                padding: 14px 12px;          /* 🔥 reduce size */
-                
-                flex-direction: column;      /* stack */
-                align-items: center;         /* center content */
-                text-align: center;
+                width: 90%;
+                max-width: 320px;
+                padding: 12px 14px;
 
-                min-height: auto;            /* 🔥 remove big height */
+                display: flex;
+                flex-direction: row;      /* ✅ KEEP ROW */
+                align-items: center;      /* ✅ vertical center */
+                gap: 10px;
+            }
+
+            .insight-text {
+                text-align: left;         /* keep readable */
+                flex: 1;                  /* ✅ take remaining space */
+            }
+
+            .insight-title {
+                font-size: 0.95em;        /* slightly smaller so it fits */
+                line-height: 1.2;
+            }
+
+            .insight-desc {
+                font-size: 0.75em;
             }
 
             .insight-icon {
-                margin-bottom: 6px;
+                font-size: 1.4em;         /* slightly smaller icon */
             }
         }
 
@@ -267,6 +277,8 @@
                 -4px -4px 8px rgba(255,255,255,0.7);
 
             transition: all 0.25s ease;
+            backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.4);
         }
 
         .insight-card:hover {
