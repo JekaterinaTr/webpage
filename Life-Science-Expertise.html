@@ -327,37 +327,18 @@
             height: 360px;
         }
 
-
-
-        /* Microscopy Gallery */
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        .gallery-card {
-            flex: 1 1 calc(50% - 15px);
-            background: #f0f0f0;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .gallery-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-        }
-        .gallery-card img {
-            max-width: 50px;
-            margin-bottom: 10px;
-        }
-        .gallery-card h4 {
-            margin: 0;
-            font-size: 1.1em;
-            color: #6a11cb;
+        .links a {
+            display: inline-block;
+            margin: 5px 5px 0 5px;
+            padding: 6px 10px;
+            background: white;
+            color: #0a5227;
+            border-radius: 6px;
+            font-size: 0.8em;
+            font-weight: bold;
         }
 
+        
         .cta {
             margin-top: 25px;
             text-align: center;
@@ -441,14 +422,16 @@
                             <h4>Auxin Response Network</h4>
 
                             <p>
-                                How do plants control growth precisely?  
-                                We uncovered a hidden regulatory network controlling hormone responses.
+                                How do plants grow and produce new organs such as flowers or roots?  
+                                We uncovered a hidden gene regulatory network controlling growth and organ Developmental responses though the plant hormone auxin.
                             </p>
 
                             <div class="tags">
-                                <span class="tag">🌿 Plant Biology</span>
-                                <span class="tag">🧬 Molecular</span>
-                                <span class="tag">📊 Systems</span>
+                                <span class="tag">🌿 Plant Science</span>
+                                <span class="tag">🧬 Molecular biology</span>
+                                <span class="tag">🧷 Genetics and epigenetics</span>
+                                <span class="tag">🧾 Transcriptional regulations</span>
+
                             </div>
                         </div>
 
@@ -502,152 +485,240 @@
 
                     </div>
                 </div>
-                <!-- CARD 2 -->
+            <!-- CARD 2 -->
+            <div class="cards-container">
+
                 <div class="flip-card">
                     <div class="flip-card-inner">
 
+                        <!-- FRONT -->
                         <div class="flip-card-front">
-                            <img src="images/anther_development.png" alt="Anther development">
+                            <div class="flip-hint">↻</div>
+                            <img src="images/auxin_network.png" alt="Anther development">
                             <h4>Anther Development</h4>
+
                             <p>
                                 How do plant tissues communicate during reproduction?  
                                 We revealed barriers controlling cell-to-cell exchange.
                             </p>
+
                             <div class="tags">
                                 <span class="tag">🌸 Reproduction</span>
                                 <span class="tag">🔬 Imaging</span>
                                 <span class="tag">🧫 Tissue Biology</span>
+
                             </div>
-
-
                         </div>
 
+                        <!-- BACK -->
                         <div class="flip-card-back">
-                            <p>
-                                <b>Goal:</b> Study tissue isolation in developing anthers.<br><br>
-                                <b>Key finding:</b> Symplastic isolation and apoplastic gating regulate development.<br><br>
-                                <b>Impact:</b> Advances knowledge of reproductive tissue organization.
-                            </p>
-                            <div class="tech">
-                                <b>Techniques</b>
-                                <span>Histology & sectioning</span>
-                                <span>Electron microscopy (TEM/SEM)</span>
-                                <span>Dye transport assays</span>
 
-                                <b>Concepts</b>
-                                <span>Symplastic isolation</span>
-                                <span>Apoplastic transport</span>
-                                <span>Tissue compartmentalization</span>
+                            <div class="info-blocks">
+                                <div class="info-item">
+                                    <b>🎯 Goal</b>
+                                    Study tissue isolation in developing anthers
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🔬 Key Finding</b>
+                                    Symplastic isolation and apoplastic gating regulate development
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🚀 Impact</b>
+                                    Reveals how physical and molecular barriers coordinate tissue differentiation during plant reproduction
+                                </div>
                             </div>
 
+                            <div class="tech">
 
+                                <div class="tech-section">
+                                    <div class="tech-title">🧪 Techniques</div>
+                                    <div class="tech-tags">
+                                        <span>Histology & sectioning</span>
+                                        <span>Electron microscopy (TEM/SEM)</span>
+                                        <span>Dye transport assays</span>
+                                    </div>
+                                </div>
+
+                                <div class="tech-section">
+                                    <div class="tech-title">🧠 Concepts</div>
+                                    <div class="tech-tags">
+                                        <span>Tissue compartmentalization</span>
+                                        <span>Symplastic isolation</span>
+                                        <span>Apoplastic transport</span>
+                                    </div>
+                                </div>
+
+                            </div>
 
                             <a href="https://doi.org/10.1242/dev.200614" target="_blank">
-                                Truskina et al. Development
+                                Truskina et al. Development 2022
                             </a>
+
                         </div>
 
                     </div>
                 </div>
 
+
                 <!-- CARD 3 -->
+            <div class="cards-container">
+
                 <div class="flip-card">
                     <div class="flip-card-inner">
 
+                        <!-- FRONT -->
                         <div class="flip-card-front">
-                            <img src="images/pollen_wall.png" alt="Pollen wall formation">
+                            <div class="flip-hint">↻</div>
+                            <img src="images/auxin_network.png" alt="Pollen wall formation">
                             <h4>Pollen Wall Formation</h4>
+
                             <p>
                                 How do plant cells coordinate to build pollen?  
                                 We uncovered a peptide-based communication system.
                             </p>
+
                             <div class="tags">
                                 <span class="tag">🌾 Pollen</span>
                                 <span class="tag">📡 Signaling</span>
                                 <span class="tag">🧬 Development</span>
-                            </div>
 
+                            </div>
                         </div>
 
+                        <!-- BACK -->
                         <div class="flip-card-back">
-                            <p>
-                                <b>Goal:</b> Understand coordination of pollen wall formation.<br><br>
-                                <b>Key finding:</b> A peptide-mediated signaling network controls the process.<br><br>
-                                <b>Impact:</b> Key insight into plant fertility mechanisms.
-                            </p>
-                            <div class="tech">
-                                <b>Techniques</b>
-                                <span>Peptide signaling assays</span>
-                                <span>Mutant analysis</span>
-                                <span>Fluorescent reporters</span>
 
-                                <b>Concepts</b>
-                                <span>Cell-cell communication</span>
-                                <span>Receptor-ligand signaling</span>
-                                <span>Developmental coordination</span>
+                            <div class="info-blocks">
+                                <div class="info-item">
+                                    <b>🎯 Goal</b>
+                                    Understand coordination of pollen wall formation
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🔬 Key Finding</b>
+                                    A peptide-mediated signaling network controls the process
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🚀 Impact</b>
+                                    Uncovers a signaling-based coordination system essential for plant fertility and reproductive success.
+                                </div>
                             </div>
 
+                            <div class="tech">
 
+                                <div class="tech-section">
+                                    <div class="tech-title">🧪 Techniques</div>
+                                    <div class="tech-tags">
+                                        <span>Peptide signaling assays</span>
+                                        <span>Histology and Imaging</span>
+                                        <span>Fluorescent reporters</span>
+                                    </div>
+                                </div>
+
+                                <div class="tech-section">
+                                    <div class="tech-title">🧠 Concepts</div>
+                                    <div class="tech-tags">
+                                        <span>Cell-cell communication</span>
+                                        <span>Receptor-ligand signaling</span>
+                                        <span>Developmental coordination</span>
+                                    </div>
+                                </div>
+
+                            </div>
 
                             <a href="https://doi.org/10.1073/pnas.2201446119" target="_blank">
                                 Truskina et al. PNAS 2022
                             </a>
+
                         </div>
 
                     </div>
                 </div>
 
+
+
                 <!-- CARD 4 -->
+            <div class="cards-container">
+
                 <div class="flip-card">
                     <div class="flip-card-inner">
 
+                        <!-- FRONT -->
                         <div class="flip-card-front">
-                            <img src="images/plant_pathology.png" alt="Plant immunity">
+                            <div class="flip-hint">↻</div>
+                            <img src="images/auxin_network.png" alt="Plant Immunity">
                             <h4>Plant Immunity & Pathology</h4>
+
                             <p>
                                 How do plants fight pathogens?  
                                 We studied hormone balance and vascular responses.
                             </p>
+
                             <div class="tags">
                                 <span class="tag">🛡️ Immunity</span>
                                 <span class="tag">🌿 Plant Stress</span>
                                 <span class="tag">🧪 Hormones</span>
+
                             </div>
-
-
                         </div>
 
+                        <!-- BACK -->
                         <div class="flip-card-back">
-                            <p>
-                                <b>Goal:</b> Investigate plant defense mechanisms.<br><br>
-                                <b>Key finding:</b> Cytokinin stabilization and xylem formation enhance resistance.<br><br>
-                                <b>Impact:</b> Links immunity with development and stress adaptation.
-                            </p>
-                            <div class="tech">
-                                <b>Techniques</b>
-                                <span>Hormone quantification (cytokinins)</span>
-                                <span>Infection assays</span>
-                                <span>Gene expression analysis</span>
 
-                                <b>Concepts</b>
-                                <span>Plant immunity</span>
-                                <span>Stress physiology</span>
-                                <span>Xylem development</span>
+                            <div class="info-blocks">
+                                <div class="info-item">
+                                    <b>🎯 Goal</b>
+                                    Investigate plant defense mechanisms agains fungal pathogens
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🔬 Key Finding</b>
+                                    Plant modify their water transport system (xylem) to resist pathogen invasion
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🚀 Impact</b>
+                                    Links plant immunity with developmental reprogramming, opening new strategies for stress resilience
+                                </div>
                             </div>
 
+                            <div class="tech">
 
+                                <div class="tech-section">
+                                    <div class="tech-title">🧪 Techniques</div>
+                                    <div class="tech-tags">
+                                        <span>Infection assays</span>
+                                        <span>Gene expression analysis</span>
+                                        <span>Histological sections</span>
+                                    </div>
+                                </div>
 
-                            <a href="https://pubmed.ncbi.nlm.nih.gov/23594348/" target="_blank">
-                                Plant Pathology Publications
-                            </a>
+                                <div class="tech-section">
+                                    <div class="tech-title">🧠 Concepts</div>
+                                    <div class="tech-tags">
+                                        <span>Plant immunity</span>
+                                        <span>Stress physiology</span>
+                                        <span>Xylem development</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="links">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/23023171/" target="_blank">Paper 1</a>
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/23594348/" target="_blank">Paper 2</a>
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0098847213002207" target="_blank">Paper 3</a>
+                            </div>
+
                         </div>
 
                     </div>
                 </div>
 
-            </div>
-
-
+                
 
 
            
