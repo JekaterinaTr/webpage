@@ -98,6 +98,20 @@
             font-weight: bold;
             color: #4dbd72;
         }
+        .model-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .model-box {
+            background: #f1dcc9;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
         .project ul {
             padding-left: 20px;
             margin: 10px 0 15px 0;
@@ -196,14 +210,15 @@
                 Proficient in high-resolution imaging techniques including confocal, scanning electron, and transmission electron microscopy, as well as histology.
             </p>
 
-            <div class="section-title">Research Experiences</div>
-            <ul>
-                <li>PhD in Plant Science, ENS de Lyon, France</li>
-                <li>Postdoctoral research: IPB Halle & University of Göttingen, Germany</li>
-                <li>University of Nottingham, UK – advanced genetics & epigenetics</li>
-                <li>University of California, Davis, USA – plant biochemistry & microscopy</li>
-            </ul>
+            <h3>Research Experiences</h3>
+            <div class="model-summary">
+                <div class="model-box"><b>Plant reproduction and histology</b><br>Postdoctoral research ENS de Lyon, France</div>
+                <div class="model-box"><b>Plant genetics and development</b><br>PhD University of Nottingham, UK and ENS de Lyon, France</div>
+                <div class="model-box"><b>Plant biochemistry</b><br>Postdoctoral research IPB Halle, Germany</div>
+                <div class="model-box"><b>Plant pathology</b><br>Scientific research University of Göttingen, Germany</div>
+            </div>
 
+            
             <div class="section-title">Technical Expertise</div>
             <ul>
                 <li>Molecular Biology: transcriptional regulation, peptide-receptor signaling, hormone pathways, meristem development</li>
