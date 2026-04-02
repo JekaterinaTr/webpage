@@ -126,6 +126,7 @@
             display: grid;
             gap: 30px;
             margin-top: 30px;
+            padding: 10px; /* 👈 add this */
         }
         /* Desktop: always 2 columns (clean look) */
         @media (min-width: 900px) {
@@ -153,6 +154,11 @@
         .flip-card {
             background: transparent;
             perspective: 1000px;
+            transition: transform 0.2s;
+            margin: 5px;
+        }
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
         }
 
         .flip-card-inner {
@@ -214,6 +220,21 @@
             color: #0a5227;
             border-radius: 6px;
             font-weight: bold;
+        }
+
+        .flip-hint {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            font-size: 18px;
+            color: #0a5227;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+        .flip-card:hover .flip-hint {
+            opacity: 1;
+            transform: rotate(180deg);
         }
         .tech {
             margin-top: 10px;
@@ -415,6 +436,7 @@
 
                         <!-- FRONT -->
                         <div class="flip-card-front">
+                            <div class="flip-hint">↻</div>
                             <img src="images/auxin_network.png" alt="Auxin network">
                             <h4>Auxin Response Network</h4>
 
@@ -649,7 +671,10 @@
    
 <script>
 document.querySelectorAll(".flip-card").forEach(card => {
-    card.addEventListener("click", () => {
+    card.addEventListener("click", (e) => {
+        // Prevent flipping when clicking links
+        if (e.target.closest("a")) return;
+
         card.classList.toggle("flipped");
     });
 });
