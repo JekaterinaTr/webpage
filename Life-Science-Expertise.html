@@ -13,23 +13,46 @@
         }
         a { text-decoration: none; color: inherit; }
 
-        /* Hero section  */
+        /* Hero section */
         .hero {
-            background: linear-gradient(135deg, #0a5227 0%, #20f475 100%);
-            color: white;
+            background-image: url("images/biography_1.png");
+            background-size: cover;  
+            background-position: center; 
+            background-repeat: no-repeat;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 80px 20px;
+            
         }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+
+            /* ✨ Card style */
+            background: rgba(255, 255, 255, 0.4); /* semi-transparent */
+            backdrop-filter: blur(8px); /* glass effect (modern look) */
+            
+            padding: 30px 40px;
+            border-radius: 20px;
+            
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
         .hero h3 {
             font-size: 2em;
             margin-bottom: 15px;
         }
+
         .hero p {
             font-size: 1.2em;
             max-width: 700px;
             margin: auto;
             line-height: 1.6;
         }
+
 
         /* Container */
         .container {
@@ -136,11 +159,15 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h3>Scientific & Life Science Expertise</h3>
-        <p>
-            Molecular biology, genetics, epigenetics, microscopy, and biochemistry applied to plant science, reproduction, development, and plant-pathogen interactions.
-            Multi-country research experience in France, Germany, UK, and USA.
-        </p>
+        <div class="hero-content">
+
+            <h3>Scientific & Life Science Expertise</h3>
+            <p>
+                Molecular biology, genetics, epigenetics, microscopy, and biochemistry applied to plant science, reproduction, development, and plant-pathogen interactions.
+                multi-country research experience in France, Germany, UK, and USA.
+            </p>
+
+        </div>
     </section>
 
     <!-- Container -->
