@@ -124,10 +124,31 @@
         /* Flip Cards Section */
         .cards-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
+            gap: 30px;
             margin-top: 30px;
         }
+        /* Desktop: always 2 columns (clean look) */
+        @media (min-width: 900px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 600px) and (max-width: 899px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 599px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
 
         .flip-card {
             background: transparent;
@@ -143,7 +164,7 @@
             transform-style: preserve-3d;
         }
 
-        .flip-card:hover .flip-card-inner {
+        .flip-card.flipped .flip-card-inner {
             transform: rotateY(180deg);
         }
 
@@ -626,6 +647,12 @@
 
     </div>
    
-
+<script>
+document.querySelectorAll(".flip-card").forEach(card => {
+    card.addEventListener("click", () => {
+        card.classList.toggle("flipped");
+    });
+});
+</script>
 </body>
 </html>
