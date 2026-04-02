@@ -237,6 +237,12 @@
             opacity: 1;
             transform: rotate(180deg);
         }
+        .flip-card-front img {
+            max-height: 120px;   /* choose a height that works */
+            width: auto;
+            display: block;
+            margin: 10px auto 0 auto;
+        }
         .tech {
             margin-top: 10px;
             font-size: 0.85em;
@@ -583,13 +589,14 @@
                         <!-- FRONT -->
                         <div class="flip-card-front">
                             <div class="flip-hint">↻</div>
-                            <img src="images/bio_1.png" alt="Pollen wall formation">
+                            
                             <h4>Pollen Wall Formation</h4>
 
                             <p>
                                 How do plant cells coordinate to build pollen?  
                                 We uncovered a peptide-based communication system.
                             </p>
+                            <img src="images/bio_1.png" alt="Pollen wall formation">
 
                             <div class="tags">
                                 <span class="tag">🌾 Pollen</span>
