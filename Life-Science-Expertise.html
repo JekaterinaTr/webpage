@@ -96,7 +96,7 @@
             margin-top: 25px;
             font-size: 1.3em;
             font-weight: bold;
-            color: #4dbd72;
+            color: #0a5227;
         }
         .model-summary {
             display: grid;
@@ -105,7 +105,7 @@
             margin: 20px 0;
         }
         .model-box {
-            background: #f1dcc9;
+            background: #bdd7c7;
             padding: 12px;
             border-radius: 8px;
             text-align: center;
@@ -120,6 +120,81 @@
             margin-bottom: 8px;
             line-height: 1.5;
         }
+
+        /* Flip Cards Section */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .flip-card {
+            background: transparent;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            backface-visibility: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+
+        .flip-card-front {
+            background: white;
+        }
+
+        .flip-card-front img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .flip-card-front h4 {
+            color: #0a5227;
+            font-size: 1.2em;
+        }
+
+        .flip-card-back {
+            background: #0a5227;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .flip-card-back p {
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .flip-card-back a {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: white;
+            color: #0a5227;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
 
         /* Microscopy Gallery */
         .gallery {
@@ -217,6 +292,123 @@
                 <div class="model-box"><b>Plant biochemistry</b><br>Postdoctoral research IPB Halle, Germany</div>
                 <div class="model-box"><b>Plant pathology</b><br>Scientific research University of Göttingen, Germany</div>
             </div>
+
+            <h3>Featured Research Projects</h3>
+
+            <div class="cards-container">
+
+                <!-- CARD 1 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front">
+                            <img src="images/auxin_network.png" alt="Auxin network">
+                            <h4>Auxin Response Network</h4>
+                            <p>
+                                How do plants control growth precisely?  
+                                We discovered a network of repressors that fine-tunes hormone responses.
+                            </p>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p>
+                                <b>Goal:</b> Understand how auxin responses are regulated.<br><br>
+                                <b>Key finding:</b> A network of transcriptional repressors modulates growth signals.<br><br>
+                                <b>Impact:</b> Improves understanding of plant development control.
+                            </p>
+                            <a href="https://www.nature.com/articles/s41586-021-03668-8" target="_blank">
+                                Truskina et al. Nature 2021
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front">
+                            <img src="images/anther_development.png" alt="Anther development">
+                            <h4>Anther Development</h4>
+                            <p>
+                                How do plant tissues communicate during reproduction?  
+                                We revealed barriers controlling cell-to-cell exchange.
+                            </p>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p>
+                                <b>Goal:</b> Study tissue isolation in developing anthers.<br><br>
+                                <b>Key finding:</b> Symplastic isolation and apoplastic gating regulate development.<br><br>
+                                <b>Impact:</b> Advances knowledge of reproductive tissue organization.
+                            </p>
+                            <a href="https://doi.org/10.1242/dev.200614" target="_blank">
+                                Truskina et al. Development
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front">
+                            <img src="images/pollen_wall.png" alt="Pollen wall formation">
+                            <h4>Pollen Wall Formation</h4>
+                            <p>
+                                How do plant cells coordinate to build pollen?  
+                                We uncovered a peptide-based communication system.
+                            </p>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p>
+                                <b>Goal:</b> Understand coordination of pollen wall formation.<br><br>
+                                <b>Key finding:</b> A peptide-mediated signaling network controls the process.<br><br>
+                                <b>Impact:</b> Key insight into plant fertility mechanisms.
+                            </p>
+                            <a href="https://doi.org/10.1073/pnas.2201446119" target="_blank">
+                                Truskina et al. PNAS 2022
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <div class="flip-card-front">
+                            <img src="images/plant_pathology.png" alt="Plant immunity">
+                            <h4>Plant Immunity & Pathology</h4>
+                            <p>
+                                How do plants fight pathogens?  
+                                We studied hormone balance and vascular responses.
+                            </p>
+                        </div>
+
+                        <div class="flip-card-back">
+                            <p>
+                                <b>Goal:</b> Investigate plant defense mechanisms.<br><br>
+                                <b>Key finding:</b> Cytokinin stabilization and xylem formation enhance resistance.<br><br>
+                                <b>Impact:</b> Links immunity with development and stress adaptation.
+                            </p>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/23594348/" target="_blank">
+                                Plant Pathology Publications
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
 
             
             <div class="section-title">Technical Expertise</div>
