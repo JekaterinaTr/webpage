@@ -23,13 +23,43 @@
 
         /* Hero section */
         .hero {
-            background: linear-gradient(135deg, #43cea2 0%, #185a9d 100%);
-            color: white;
+            background-image: url("images/approach_1.png");
+            background-size: cover;  
+            background-position: center; 
+            background-repeat: no-repeat;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 80px 20px;
+            
         }
-        .hero h3 { font-size: 2em; margin-bottom: 15px; }
-        .hero p { font-size: 1.2em; max-width: 700px; margin: auto; line-height: 1.6; }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+
+            /* ✨ Card style */
+            background: rgba(255, 255, 255, 0.4); /* semi-transparent */
+            backdrop-filter: blur(8px); /* glass effect (modern look) */
+            
+            padding: 30px 40px;
+            border-radius: 20px;
+            
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
 
         /* Container */
         .container {
@@ -44,11 +74,39 @@
             margin-bottom: 30px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
-        .project h2 { color: #43cea2; margin-top: 0; font-size: 1.8em; }
-        .project p { line-height: 1.6; margin-bottom: 15px; }
-        .section-title { margin-top: 25px; font-size: 1.3em; font-weight: bold; color: #185a9d; }
-        .project ul { padding-left: 20px; margin: 10px 0 15px 0; }
-        .project li { margin-bottom: 8px; line-height: 1.5; }
+        .project h2 {
+            color:#7c20cd;
+            margin-top: 0;
+            text-align: center;
+            font-size: 2em;
+        }
+        .project h3 {
+            color: #7c20cd;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .project p {
+            line-height: 1.6;
+           
+        }
+        .project img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto; /* center and spacing */
+            border-radius: 10px;
+        }
+
+        .section-title {
+            margin-top: 25px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #7c20cd;
+            text-align: center;
+        }
+ 
         .mermaid { text-align: center; margin: 30px auto; }
 
         .cta { margin-top: 25px; text-align: center; }
@@ -116,9 +174,11 @@ flowchart LR
                 <li>End-to-end reproducibility and maintainability for long-term projects.</li>
             </ul>
 
-            <div class="cta">
-                <a href="#">Explore My Portfolio</a>
-            </div>
+            
+        </div>
+
+        <div class="cta" style="margin-top: 15px;">
+            <a href="index.html">⬅ Back to Home</a>
         </div>
     </div>
 
