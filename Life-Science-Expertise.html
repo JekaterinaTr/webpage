@@ -127,7 +127,8 @@
             display: grid;
             gap: 40px;
             margin-top: 30px;
-            padding: 20px; /* 👈 add this */
+            padding: 20px; 
+            align-items: stretch;
         }
         /* Desktop: always 2 columns (clean look) */
         @media (min-width: 900px) {
@@ -157,6 +158,9 @@
             perspective: 1000px;
             transition: transform 0.2s;
             margin: 0;
+        }
+        .flip-card:hover {
+            transform: translateY(-5px);
         }
         .flip-card:hover .flip-card-inner {
             transform: rotateY(180deg);
