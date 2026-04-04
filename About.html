@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scientific & Life Science Expertise | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #222;
+        }
+        a { text-decoration: none; color: inherit; }
+
+        /* Hero section */
+        .hero {
+            background-image: url("images/biography_1.png");
+            background-size: cover;  
+            background-position: center; 
+            background-repeat: no-repeat;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 80px 20px;
+            
+        }
+
+        .hero-content {
+            max-width: 800px;
+            text-align: center;
+
+            /* ✨ Card style */
+            background: rgba(255, 255, 255, 0.4); /* semi-transparent */
+            backdrop-filter: blur(8px); /* glass effect (modern look) */
+            
+            padding: 30px 40px;
+            border-radius: 20px;
+            
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+        .project {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .project h2 {
+            color:#0a5227;
+            margin-top: 0;
+            text-align: center;
+            font-size: 2em;
+        }
+        .project h3 {
+            color: #0a5227;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        .project p {
+            line-height: 1.6;
+           
+        }
+        .project img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px auto; /* center and spacing */
+            border-radius: 10px;
+        }
+
+        .section-title {
+            margin-top: 25px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #0a5227;
+            text-align: center;
+        }
+        .model-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .model-box {
+            background: #bdd7c7;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .project ul {
+            padding-left: 20px;
+            margin: 10px 0 15px 0;
+        }
+        .project li {
+            margin-bottom: 8px;
+            line-height: 1.5;
+        }
+
+        /* Flip Cards Section */
+        .cards-container {
+            display: grid;
+            gap: 40px;
+            margin-top: 30px;
+            padding: 20px; 
+            align-items: stretch;
+        }
+        /* Desktop: always 2 columns (clean look) */
+        @media (min-width: 900px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Tablet */
+        @media (min-width: 600px) and (max-width: 899px) {
+            .cards-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 599px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        .cards-container {
+            overflow: visible;
+        }
+        .flip-card {
+            background: transparent;
+            perspective: 1000px;
+            transition: transform 0.3s;
+            margin: 0;
+            position: relative;
+            z-index: 0;
+            isolation: isolate;
+        }
+       
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+                
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 360px;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            will-change: transform;
+            
+            
+        }
+
+        
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+            border-radius: 14px;
+
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+
+            transform-style: preserve-3d;
+
+            overflow: hidden;
+
+            padding: 20px;
+
+            border: 1px solid rgba(10, 82, 39, 0.15);
+            box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+        }
+        .flip-card-front {
+            background: white;
+            z-index: 2;
+        }
+
+        .flip-card-front img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .flip-card-front h4 {
+            color: #0a5227;
+            font-size: 1.2em;
+        }
+
+        .flip-card-back {
+            background: #0a5227;
+            color: white;
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 1;
+        }
+
+        .flip-card-back p {
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .flip-card-back a {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: white;
+            color: #0a5227;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .flip-hint {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            font-size: 18px;
+            color: #0a5227;
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+        .flip-card:hover {
+            transform: translateY(-5px);
+        }
+        .flip-card:hover .flip-hint {
+            opacity: 1;
+            transform: rotate(180deg);
+        }
+        .flip-card-front img {
+            max-height: 120px;   /* choose a height that works */
+            width: auto;
+            display: block;
+            margin: 10px auto 0 auto;
+        }
+       
+        .tech {
+            margin-top: 10px;
+            font-size: 0.85em;
+            text-align: left;
+        }
+
+        .tech b {
+            display: block;
+            margin-top: 8px;
+            color: #a8e6cf;
+        }
+
+        .tech span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* FRONT TAGS */
+        .tags {
+            margin-top: 10px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e0f2e9;
+            color: #0a5227;
+            padding: 4px 8px;
+            margin: 2px;
+            border-radius: 6px;
+            font-size: 0.75em;
+            font-weight: bold;
+        }
+
+        /* BACK STRUCTURE */
+        .info-blocks {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: left;
+            font-size: 0.85em;
+        }
+
+        .info-item {
+            background: rgba(255,255,255,0.1);
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .info-item b {
+            display: block;
+            font-size: 0.8em;
+            opacity: 0.8;
+        }
+
+        /* ICON STYLE */
+        .icon {
+            margin-right: 5px;
+        }
+
+        /* TECH SECTION CENTERED */
+        
+
+        .tech-section {
+            margin-top: 8px;
+        }
+
+        .tech-title {
+            font-weight: bold;
+            color: #a8e6cf;
+            margin-bottom: 5px;
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+
+        .tech-tags span {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            padding: 4px 6px;
+            border-radius: 5px;
+            margin: 3px;
+            font-size: 0.75em;
+        }
+
+        /* Make cards slightly taller for content */
+        
+
+        .links a {
+            display: inline-block;
+            margin: 5px 5px 0 5px;
+            padding: 6px 10px;
+            background: white;
+            color: #0a5227;
+            border-radius: 6px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .highlight-card {
+            background: #fff;
+            border-left: 5px solid #0a5227;
+            border-radius: 8px;
+            padding: 15px 20px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+            transition: box-shadow 0.3s;
+        }
+        .highlight-card:hover {
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+        
+        .cta {
+            margin-top: 25px;
+            text-align: center;
+        }
+        .cta a {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #6a11cb;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .cta a:hover {
+            background: #4a0fa1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .hero h3 {
+                font-size: 1.5em;
+            }
+            .hero p {
+                font-size: 1em;
+            }
+            .project h2 {
+                font-size: 1.5em;
+            }
+            .gallery-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <h3>About Me</h3>
+            <p>
+                Applied AI & Computer Vision Engineer with a PhD in Plant Biology.  
+                I combine deep scientific expertise with end-to-end AI system development 
+                to build real-world solutions for environmental monitoring, agriculture, and life sciences.
+            </p>
+
+        </div>
+    </section>
+    <div class="container">
+    <div class="project">
+        <h2 style="color:#0a5227;">My Approach</h2>
+
+        <p style="text-align:center;">
+            I develop AI systems that work outside the lab — from data acquisition 
+            to deployment on edge devices, cloud infrastructure, and client interfaces.
+        </p>
+
+        <h3 style="color:#0a5227;">Core Principles</h3>
+        <ul>
+            <li><strong>Real-World Deployment:</strong> Edge + cloud solutions</li>
+            <li><strong>Data-Centric Design:</strong> Imaging, sensors, structured pipelines</li>
+            <li><strong>Performance Optimization:</strong> ONNX, TensorRT, OpenVINO</li>
+            <li><strong>Cross-Disciplinary:</strong> AI + life sciences</li>
+            <li><strong>Automation:</strong> APIs, pipelines, dashboards</li>
+        </ul>
+
+
+    <!-- Container -->
+    <div class="container">
+
+        <div class="project">
+            <h2>Advanced Research in Plant Molecular Biology & Imaging</h2>
+            
+            <p>
+                Extensive expertise in molecular biology, genetics, and biochemistry with a focus on plant reproduction, development, and tissue interactions.
+                Proficient in high-resolution imaging techniques including confocal, scanning electron, and transmission electron microscopy, as well as histology.
+            </p>
+            <img src="images/biography_2.png" alt="Life Science and IA Expertese">
+            <h3>Research Experiences</h3>
+            <div class="model-summary">
+                <div class="model-box"><b>Plant reproduction and histology</b><br>Postdoctoral research ENS de Lyon, France</div>
+                <div class="model-box"><b>Plant genetics and development</b><br>PhD University of Nottingham, UK and ENS de Lyon, France</div>
+                <div class="model-box"><b>Plant biochemistry</b><br>Postdoctoral research IPB Halle, Germany</div>
+                <div class="model-box"><b>Plant pathology</b><br>Scientific research University of Göttingen, Germany</div>
+            </div>
+
+            <h3>Featured Research Projects</h3>
+
+            <!-- CARD 1 -->
+            <div class="cards-container">
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <!-- FRONT -->
+                        <div class="flip-card-front">
+                            <div class="flip-hint">↻</div>
+                            
+                            <h4>Auxin Response Network</h4>
+
+                            <p><strong>How do plants grow and produce new organs?</strong></p>
+                            <p>We uncovered a hidden gene regulatory network controlling growth and organ development though the hormone auxin</p>
+                            
+                            <img src="images/bio_2.png" alt="Auxin network">
+                            <div class="tags">
+                                <span class="tag">🌿 Plant Science</span>
+                                <span class="tag">🧬 Molecular biology</span>
+                                <span class="tag">🧾 Transcriptional regulations</span>
+
+                            </div>
+                        </div>
+
+                        <!-- BACK -->
+                        <div class="flip-card-back">
+
+                            <div class="info-blocks">
+                                <div class="info-item">
+                                    <b>🎯 Goal</b>
+                                    Decode how auxin responses are regulated
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🔬 Key Finding</b>
+                                    A network of repressors fine-tunes hormone signaling
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🚀 Impact</b>
+                                    Enables predictive models of plant growth
+                                </div>
+                            </div>
+
+                            <div class="tech">
+
+                                <div class="tech-section">
+                                    <div class="tech-title">🧪 Techniques</div>
+                                    <div class="tech-tags">
+                                        <span>RNA-seq</span>
+                                        <span>Mutants</span>
+                                        <span>Confocal</span>
+                                    </div>
+                                </div>
+
+                                <div class="tech-section">
+                                    <div class="tech-title">🧠 Concepts</div>
+                                    <div class="tech-tags">
+                                        <span>Auxin signaling</span>
+                                        <span>Gene networks</span>
+                                        <span>Systems biology</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <a href="https://pubmed.ncbi.nlm.nih.gov/33208947" target="_blank">
+                                Nature 2021
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!-- CARD 2 -->
+            
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <!-- FRONT -->
+                        <div class="flip-card-front">
+                            <div class="flip-hint">↻</div>
+                            
+                            <h4>Anther Development</h4>
+
+                            <p><strong>How do plant tissues communicate during reproduction? </strong></p>
+                                 
+                            <p>We discovered a new apoplastic barrier controlling cell-to-cell exchange in anthers</p>
+                            
+                            <img src="images/bio_4.png" alt="Anther development">
+                            <div class="tags">
+                                <span class="tag">🌸 Reproduction</span>
+                                <span class="tag">🔬 Imaging</span>
+                                <span class="tag">🧫 Tissue Biology</span>
+
+                            </div>
+                        </div>
+
+                        <!-- BACK -->
+                        <div class="flip-card-back">
+
+                            <div class="info-blocks">
+                                <div class="info-item">
+                                    <b>🎯 Goal</b>
+                                    Study tissue isolation in developing anthers
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🔬 Key Finding</b>
+                                    Symplastic isolation and apoplastic gating regulate development
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🚀 Impact</b>
+                                    Reveals how physical and molecular barriers coordinate tissue differentiation during plant reproduction
+                                </div>
+                            </div>
+
+                            <div class="tech">
+
+                                <div class="tech-section">
+                                    <div class="tech-title">🧪 Techniques</div>
+                                    <div class="tech-tags">
+                                        <span>Histology & sectioning</span>
+                                        <span>Electron microscopy (TEM/SEM)</span>
+                                        <span>Dye transport assays</span>
+                                    </div>
+                                </div>
+
+                                <div class="tech-section">
+                                    <div class="tech-title">🧠 Concepts</div>
+                                    <div class="tech-tags">
+                                        <span>Tissue compartmentalization</span>
+                                        <span>Symplastic isolation</span>
+                                        <span>Apoplastic transport</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <a href="https://doi.org/10.1242/dev.200614" target="_blank">
+                                Truskina et al. Development 2022
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!-- CARD 3 -->
+          
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <!-- FRONT -->
+                        <div class="flip-card-front">
+                            <div class="flip-hint">↻</div>
+                            
+                            <h4>Pollen Wall Formation</h4>
+
+                            <p><strong> How do plant cells coordinate to build pollen?</strong></p>
+                                 
+                            <p>We uncovered a peptide-based communication system between difefrent tissues and cells which regulates the pollen protective layer formation</p>
+                            
+                            <img src="images/bio_1.png" alt="Pollen wall formation">
+
+                            <div class="tags">
+                                <span class="tag">🌾 Pollen</span>
+                                <span class="tag">📡 Signaling</span>
+                                <span class="tag">🧬 Development</span>
+
+                            </div>
+                        </div>
+
+                        <!-- BACK -->
+                        <div class="flip-card-back">
+
+                            <div class="info-blocks">
+                                <div class="info-item">
+                                    <b>🎯 Goal</b>
+                                    Understand coordination of pollen wall formation
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🔬 Key Finding</b>
+                                    A peptide-mediated signaling network controls the process
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🚀 Impact</b>
+                                    Uncovers a signaling-based coordination system essential for plant fertility and reproductive success.
+                                </div>
+                            </div>
+
+                            <div class="tech">
+
+                                <div class="tech-section">
+                                    <div class="tech-title">🧪 Techniques</div>
+                                    <div class="tech-tags">
+                                        <span>Peptide signaling assays</span>
+                                        <span>Histology and Imaging</span>
+                                        <span>Fluorescent reporters</span>
+                                    </div>
+                                </div>
+
+                                <div class="tech-section">
+                                    <div class="tech-title">🧠 Concepts</div>
+                                    <div class="tech-tags">
+                                        <span>Cell-cell communication</span>
+                                        <span>Receptor-ligand signaling</span>
+                                        <span>Developmental coordination</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <a href="https://doi.org/10.1073/pnas.2201446119" target="_blank">
+                                Truskina et al. PNAS 2022
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <!-- CARD 4 -->
+            
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+
+                        <!-- FRONT -->
+                        <div class="flip-card-front">
+                            <div class="flip-hint">↻</div>
+                            
+                            <h4>Plant Immunity & Pathology</h4>
+
+                            <p><strong>How do plants fight pathogens?</strong></p>
+                                
+                            <p>We studied hormone balance and vascular responses which enable plant to survive attacks by fungal pahtogens</p>
+                            
+                            <img src="images/bio_3.png" alt="Plant Immunity">
+                            <div class="tags">
+                                <span class="tag">🛡️ Immunity</span>
+                                <span class="tag">🌿 Plant Stress</span>
+                                <span class="tag">🧪 Hormones</span>
+
+                            </div>
+                        </div>
+
+                        <!-- BACK -->
+                        <div class="flip-card-back">
+
+                            <div class="info-blocks">
+                                <div class="info-item">
+                                    <b>🎯 Goal</b>
+                                    Investigate plant defense mechanisms agains fungal pathogens
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🔬 Key Finding</b>
+                                    Plant modify their water transport system (xylem) to resist pathogen invasion
+                                </div>
+
+                                <div class="info-item">
+                                    <b>🚀 Impact</b>
+                                    Links plant immunity with developmental reprogramming, opening new strategies for stress resilience
+                                </div>
+                            </div>
+
+                            <div class="tech">
+
+                                <div class="tech-section">
+                                    <div class="tech-title">🧪 Techniques</div>
+                                    <div class="tech-tags">
+                                        <span>Infection assays</span>
+                                        <span>Gene expression analysis</span>
+                                        <span>Histological sections</span>
+                                    </div>
+                                </div>
+
+                                <div class="tech-section">
+                                    <div class="tech-title">🧠 Concepts</div>
+                                    <div class="tech-tags">
+                                        <span>Plant immunity</span>
+                                        <span>Stress physiology</span>
+                                        <span>Xylem development</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="links">
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/23023171/" target="_blank">Paper 1</a>
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/23594348/" target="_blank">Paper 2</a>
+                                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0098847213002207" target="_blank">Paper 3</a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            
+            </div>
+
+                <h3 class="section-title" style="margin-top: 60px;">Impact & Applicability</h3>
+
+                <div class="cards-container">
+                    <div class="highlight-card">
+                        <h4>🚀 AI for Life Science Innovation</h4>
+                        <p>Developing AI to accelerate discoveries in molecular biology, plant breeding, and ecosystem monitoring</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>🧬 From Cells to Data-Driven Insights</h4>
+                        <p>My understanding of molecular networks and plant biology guides AI to interpret complex biological datasets meaningfully</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>🔬 Advanced Imaging Meets Intelligent Analysis</h4>
+                        <p>High-resolution microscopy feeds AI image analysis to detect cells, pollen, and disease symptoms automatically</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h4>📊 Integrating Multi-Modal Data</h4>
+                        <p>Merge transcriptomics, phenotyping, and environmental datasets with AI pipelines to reveal hidden biological patterns</p>
+                    </div>
+                    
+                </div>
+                                 
+
+            
+
+               
+
+
+        <div class="cta" style="margin-top: 15px;">
+            <a href="index.html">⬅ Back to Home</a>
+        </div>
+
+    </div>
+   
+<script>
+document.querySelectorAll(".flip-card").forEach(card => {
+    card.addEventListener("click", (e) => {
+        // Prevent flipping when clicking links
+        if (e.target.closest("a")) return;
+
+        card.classList.toggle("flipped");
+    });
+});
+</script>
+</body>
+</html>
