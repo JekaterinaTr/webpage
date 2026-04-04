@@ -142,21 +142,28 @@
         #skills p { color: #555; font-size: 0.95em; }
 
         /* --- Responsive --- */
-        @media screen and (max-width: 1024px) { #skills article { flex: 1 1 48%; } }
-        @media screen and (max-width: 768px)  {
-            
-            #skills article { flex: 1 1 100%; } }
+        @media screen and (max-width: 1024px) {
+            #skills {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-        
+        @media screen and (max-width: 768px) {
 
+            /* Skills */
+            #skills {
+                grid-template-columns: 1fr;
+            }
+
+            /* 🔥 HERO MOBILE FIX */
             .hero-content {
-                flex-direction: column; /* 🔥 STACK instead of side-by-side */
+                flex-direction: column;
                 text-align: center;
                 gap: 20px;
             }
 
             .portrait img {
-                max-width: 140px; /* smaller image on mobile */
+                max-width: 140px;
             }
 
             .hero-name {
@@ -169,12 +176,13 @@
 
             .hero-description {
                 font-size: 1em;
-                padding: 0 10px; /* prevent edge overflow */
+                padding: 0 10px;
             }
 
             #hero {
-                padding: 40px 15px; /* less aggressive spacing */
+                padding: 40px 15px;
             }
+        }
         #skills-intro {
             text-align: center;
             max-width: 800px;
